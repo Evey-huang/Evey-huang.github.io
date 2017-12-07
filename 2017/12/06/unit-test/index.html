@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="一开始让我学单元测试我是拒绝的，但是无奈师傅交给的任务。看了一早上的测试文章云里雾里差点睡着，下午就决定自己先来动手实践一下单元测试，到底单元测试是什么怎么写结果是怎样。 开始创建项目使用vue-cli先创建一个vues项目，这里就不累赘了，另一篇文章《新建Vue项目》有写。  注意！npm install安装依赖的时">
+<meta name="description" content="一开始让我学单元测试我是拒绝的，但是无奈师傅交给的任务。看了一早上的测试文章云里雾里差点睡着，下午就决定自己先来动手实践一下单元测试，到底单元测试是什么怎么写结果是怎样。 开始创建项目使用vue-cli先创建一个vuejs项目，这里就不累赘了，另一篇文章《新建Vue项目》有写。  注意！npm install安装依赖的">
 <meta name="keywords" content="unit vue 单元测试 测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的第一个单元测试">
 <meta property="og:url" content="http://yoursite.com/2017/12/06/unit-test/index.html">
 <meta property="og:site_name" content="EveyWong">
-<meta property="og:description" content="一开始让我学单元测试我是拒绝的，但是无奈师傅交给的任务。看了一早上的测试文章云里雾里差点睡着，下午就决定自己先来动手实践一下单元测试，到底单元测试是什么怎么写结果是怎样。 开始创建项目使用vue-cli先创建一个vues项目，这里就不累赘了，另一篇文章《新建Vue项目》有写。  注意！npm install安装依赖的时候要有耐心(其实是我网速慢)千万不要随便停止，因为那可能会漏装了东西导致后面会">
+<meta property="og:description" content="一开始让我学单元测试我是拒绝的，但是无奈师傅交给的任务。看了一早上的测试文章云里雾里差点睡着，下午就决定自己先来动手实践一下单元测试，到底单元测试是什么怎么写结果是怎样。 开始创建项目使用vue-cli先创建一个vuejs项目，这里就不累赘了，另一篇文章《新建Vue项目》有写。  注意！npm install安装依赖的时候要有耐心(其实是我网速慢)千万不要随便停止，因为那可能会漏装了东西导致后面">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/unit-vue1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/unit-vue2.png">
@@ -93,10 +93,11 @@
 <meta property="og:image" content="http://yoursite.com/images/unit-vue4.png">
 <meta property="og:image" content="http://yoursite.com/images/unit-vue5.png">
 <meta property="og:image" content="http://yoursite.com/images/unit-vue6.png">
-<meta property="og:updated_time" content="2017-12-06T11:03:47.000Z">
+<meta property="og:image" content="http://yoursite.com/images/unit-vue7.png">
+<meta property="og:updated_time" content="2017-12-07T03:29:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的第一个单元测试">
-<meta name="twitter:description" content="一开始让我学单元测试我是拒绝的，但是无奈师傅交给的任务。看了一早上的测试文章云里雾里差点睡着，下午就决定自己先来动手实践一下单元测试，到底单元测试是什么怎么写结果是怎样。 开始创建项目使用vue-cli先创建一个vues项目，这里就不累赘了，另一篇文章《新建Vue项目》有写。  注意！npm install安装依赖的时候要有耐心(其实是我网速慢)千万不要随便停止，因为那可能会漏装了东西导致后面会">
+<meta name="twitter:description" content="一开始让我学单元测试我是拒绝的，但是无奈师傅交给的任务。看了一早上的测试文章云里雾里差点睡着，下午就决定自己先来动手实践一下单元测试，到底单元测试是什么怎么写结果是怎样。 开始创建项目使用vue-cli先创建一个vuejs项目，这里就不累赘了，另一篇文章《新建Vue项目》有写。  注意！npm install安装依赖的时候要有耐心(其实是我网速慢)千万不要随便停止，因为那可能会漏装了东西导致后面">
 <meta name="twitter:image" content="http://yoursite.com/images/unit-vue1.jpg">
 
 
@@ -319,7 +320,7 @@
       
         <p><img src="/images/unit-vue1.jpg" alt="JPG"></p>
 <p>一开始让我学单元测试我是拒绝的，但是无奈师傅交给的任务。看了一早上的测试文章云里雾里差点睡着，下午就决定自己先来动手实践一下单元测试，到底单元测试是什么怎么写结果是怎样。</p>
-<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><p>使用vue-cli先创建一个vues项目，这里就不累赘了，另一篇文章《新建Vue项目》有写。</p>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><p>使用vue-cli先创建一个vuejs项目，这里就不累赘了，另一篇文章《新建Vue项目》有写。</p>
 <blockquote>
 <p>注意！npm install安装依赖的时候要有耐心(其实是我网速慢)千万不要随便停止，因为那可能会漏装了东西导致后面会出BUG。我就是心急导致后面测试运行失败，只好默默地把node_modules删了再重新运行npm install</p>
 </blockquote>
@@ -361,6 +362,8 @@
 <blockquote>
 <p>我用npm装出错，cnpm就完美运行</p>
 </blockquote>
+<p>翻过一座山又有一条河，看了很多相关的回答还是看不出个所以然来，贴图占坑以后再回填。</p>
+<p><img src="/images/unit-vue7.png" alt="PNG"></p>
 
       
     </div>
