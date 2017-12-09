@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://eveywongblog.files.wordpress.com/2017/11/victoria-bilsborough-232767.jpg">
 <meta property="og:image" content="https://eveywongblog.files.wordpress.com/2017/11/e98089e58cba_007.png">
-<meta property="og:updated_time" content="2017-12-04T06:07:20.000Z">
+<meta property="og:updated_time" content="2017-12-09T03:48:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="新建Vue项目">
 <meta name="twitter:description" content="在新建vue项目之前应该先检查一下是否已经安装好npm、node  新建一个vue项目 设置镜像 1npm install -g cnpm --registry=https://registry.npm.taobao.org  安装webpack 1npm install webpack -g  安装vue-cli 1npm install vue-cli -g  创建项目 1vue init">
@@ -204,6 +204,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -285,6 +295,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -422,7 +454,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="uyan_frame"></div>
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjI1NC84ODE4"></div>
     </div>
 
   
@@ -484,15 +516,24 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">5</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -711,19 +752,22 @@
 
 
   
-    
 
-    
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2151425"></script>
-      <!-- UY END -->
-    
+
+
+
+
   
-
-
-
-
-
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
