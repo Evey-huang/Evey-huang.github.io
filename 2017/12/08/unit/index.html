@@ -87,17 +87,17 @@
 <meta property="og:site_name" content="EveyWong">
 <meta property="og:description" content="什么是单元测试来自维基百科的回答  单元测试（英语：Unit Testing）又称为模块测试, 是针对程序的最小单元来进行正确性检验的测试工作。程序单元是应用的最小可测试部件。一个单元可能是单个程序、函数、过程、方法等。  需不需要写单测好的单元测试是使你开发的产品走向成功的秘密武器：  有助于设计：写单元测试首先给了你一个如何设计 API 的清晰视角。 特性文档：单元测试描述和记录了代码所要实现">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/unit1-1.png">
-<meta property="og:image" content="http://yoursite.com/images/unit3.png">
-<meta property="og:image" content="http://yoursite.com/images/unit4.png">
-<meta property="og:image" content="http://yoursite.com/images/unit5.png">
-<meta property="og:image" content="http://yoursite.com/images/unit6.png">
-<meta property="og:image" content="http://yoursite.com/images/unit2.jpg">
-<meta property="og:updated_time" content="2017-12-21T02:01:54.000Z">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit1-1.png">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit3.png">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit4.png">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit5.png">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit6.png">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit2.jpg">
+<meta property="og:updated_time" content="2017-12-22T05:29:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端单元测试初探">
 <meta name="twitter:description" content="什么是单元测试来自维基百科的回答  单元测试（英语：Unit Testing）又称为模块测试, 是针对程序的最小单元来进行正确性检验的测试工作。程序单元是应用的最小可测试部件。一个单元可能是单个程序、函数、过程、方法等。  需不需要写单测好的单元测试是使你开发的产品走向成功的秘密武器：  有助于设计：写单元测试首先给了你一个如何设计 API 的清晰视角。 特性文档：单元测试描述和记录了代码所要实现">
-<meta name="twitter:image" content="http://yoursite.com/images/unit1-1.png">
+<meta name="twitter:image" content="http://p1cjg886l.bkt.clouddn.com/unit1-1.png">
 
 
 
@@ -396,7 +396,7 @@
 <h5 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h5><p>创建一个名为<code>unit-test</code>的项目</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack unit-test</span><br></pre></td></tr></table></figure>
 <p>然后会有询问</p>
-<p><img src="/images/unit1-1.png" alt="PNG"></p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/unit1-1.png" alt="PNG"></p>
 <blockquote>
 <p>这里在询问需不需要加入<code>unit</code>单测的时候选了<code>no</code>是因为本文主要是讲怎样从0开始搭建测试环境，所以创建项目的时候先不考虑加入。</p>
 </blockquote>
@@ -409,7 +409,7 @@
 <h5 id="安装karma"><a href="#安装karma" class="headerlink" title="安装karma"></a>安装<code>karma</code></h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install karma --save-dev</span><br></pre></td></tr></table></figure>
 <h5 id="进入unit文件夹"><a href="#进入unit文件夹" class="headerlink" title="进入unit文件夹"></a>进入unit文件夹</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd test/unit/</span><br></pre></td></tr></table></figure>
 <h5 id="初始化karma"><a href="#初始化karma" class="headerlink" title="初始化karma"></a>初始化karma</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma init</span><br></pre></td></tr></table></figure>
-<p><img src="/images/unit3.png" alt="PNG"></p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/unit3.png" alt="PNG"></p>
 <p>这样就生成了一个基本的配置文件<code>karma.conf.js</code></p>
 <h5 id="相关文件配置"><a href="#相关文件配置" class="headerlink" title="相关文件配置"></a>相关文件配置</h5><p><strong>karma.conf.js</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> webpackConfig = <span class="built_in">require</span>(<span class="string">'../../build/webpack.test.conf'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">config</span>) </span>&#123;</span><br><span class="line">  config.set(&#123;</span><br><span class="line">    browsers: [<span class="string">'PhantomJS'</span>], <span class="comment">// 浏览器</span></span><br><span class="line">    frameworks: [<span class="string">'mocha'</span>, <span class="string">'sinon-chai'</span>, <span class="string">'phantomjs-shim'</span>], <span class="comment">// 测试框架</span></span><br><span class="line">    reporters: [<span class="string">'spec'</span>, <span class="string">'coverage'</span>], <span class="comment">// 测试报告</span></span><br><span class="line">    files: [<span class="string">'./index.js'</span>], <span class="comment">// 测试入口文件</span></span><br><span class="line">    preprocessors: &#123;</span><br><span class="line">      <span class="string">'./index.js'</span>: [<span class="string">'webpack'</span>, <span class="string">'coverage'</span>] <span class="comment">// 处理测试文件</span></span><br><span class="line">    &#125;,</span><br><span class="line">    webpack: webpackConfig, <span class="comment">// webpack配置</span></span><br><span class="line">    webpackMiddleware: &#123;</span><br><span class="line">      noInfo: <span class="literal">true</span> <span class="comment">// 不显示webpack打包日志信息</span></span><br><span class="line">    &#125;,</span><br><span class="line">    coverageReporter: &#123; <span class="comment">// 代码覆盖率报告</span></span><br><span class="line">      dir: <span class="string">'./coverage'</span>,</span><br><span class="line">      reporters: [</span><br><span class="line">        &#123; <span class="attr">type</span>: <span class="string">'lcov'</span>, <span class="attr">subdir</span>: <span class="string">'.'</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">type</span>: <span class="string">'text-summary'</span> &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -431,8 +431,8 @@
 <h5 id="简单测试用例"><a href="#简单测试用例" class="headerlink" title="简单测试用例"></a>简单测试用例</h5><p><strong>HelloWorld.spec.js</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> HelloWorld <span class="keyword">from</span> <span class="string">'@/components/HelloWorld'</span></span><br><span class="line"></span><br><span class="line">describe(<span class="string">'HelloWorld.vue'</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">'should render correct contents'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> Constructor = Vue.extend(HelloWorld)</span><br><span class="line">    <span class="keyword">const</span> vm = <span class="keyword">new</span> Constructor().$mount()</span><br><span class="line">    expect(vm.$el.querySelector(<span class="string">'.hello h1'</span>).textContent)</span><br><span class="line">    .to.equal(<span class="string">'Welcome to Your Vue.js App'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  it(<span class="string">'should be Essential Links'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> Constructor = Vue.extend(HelloWorld)</span><br><span class="line">    <span class="keyword">const</span> vm = <span class="keyword">new</span> Constructor().$mount()</span><br><span class="line">    expect(vm.$el.querySelector(<span class="string">'.hello h2'</span>).textContent)</span><br><span class="line">    .to.equal(<span class="string">'Essential Links'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h5 id="运行测试用例"><a href="#运行测试用例" class="headerlink" title="运行测试用例"></a>运行测试用例</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run test</span><br></pre></td></tr></table></figure>
-<h5 id="生成测试报告"><a href="#生成测试报告" class="headerlink" title="生成测试报告"></a>生成测试报告</h5><p><img src="/images/unit4.png" alt="PNG"></p>
-<p><img src="/images/unit5.png" alt="PNG"></p>
+<h5 id="生成测试报告"><a href="#生成测试报告" class="headerlink" title="生成测试报告"></a>生成测试报告</h5><p><img src="http://p1cjg886l.bkt.clouddn.com/unit4.png" alt="PNG"></p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/unit5.png" alt="PNG"></p>
 <h5 id="测试报告分析"><a href="#测试报告分析" class="headerlink" title="测试报告分析"></a>测试报告分析</h5><p>从图中我们可以看到它有四个指标：</p>
 <ul>
 <li>Statements: 语句覆盖率，执行到每个语句；</li>
@@ -443,7 +443,7 @@
 <p>从图中我们也可以看出覆盖率极低，打开<code>coverage</code>文件夹可以看到:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">coverage/</span><br><span class="line">├── lcov-report</span><br><span class="line">│   ├── base.css</span><br><span class="line">│   ├── index.html</span><br><span class="line">│   ├── prettify.css</span><br><span class="line">│   ├── prettify.js</span><br><span class="line">│   ├── sort-arrow-sprite.png</span><br><span class="line">│   ├── sorter.js</span><br><span class="line">│   └── unit</span><br><span class="line">│       ├── index.html // 测试覆盖率报告</span><br><span class="line">│       └── index.js.html // 覆盖率低的原因</span><br><span class="line">└── lcov.info</span><br></pre></td></tr></table></figure>
 <p>打开<code>index.js.html</code>可以看到覆盖率低的原因</p>
-<p><img src="/images/unit6.png" alt="PNG"></p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/unit6.png" alt="PNG"></p>
 <p>从图中可以看到红色部分是测试用例没有覆盖到的地方，旁边的<code>1x</code>表示执行了<code>一次</code>。因为本文所写的测试用例<code>HelloWorld.spec.js</code>很简单没有涉及到逻辑，没有覆盖到这些函数很正常。对于实际开发来说，通过这个清晰的报告，我们可以在代码中看出那些函数，那些代码块没有被执行，从而去分析原因，修正测试用例，完善代码逻辑，提高质量。</p>
 <p>打开<code>lcov.info</code>文件可以看到(这里我截取了部分)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">FN:50,getDefault</span><br><span class="line">FN:51,getModuleExports</span><br><span class="line">FN:57,(anonymous_7)</span><br><span class="line">FN:68,(anonymous_8)</span><br><span class="line">....</span><br><span class="line">FNF:694</span><br><span class="line">FNH:207</span><br><span class="line">....</span><br><span class="line">FNDA:0,simpleNormalizeChildren</span><br><span class="line">FNDA:0,normalizeChildren</span><br><span class="line">FNDA:0,isTextNode</span><br><span class="line">FNDA:0,normalizeArrayChildren</span><br><span class="line">.....</span><br><span class="line">DA:633,2</span><br><span class="line">DA:635,1</span><br><span class="line">DA:638,1</span><br></pre></td></tr></table></figure>
@@ -459,7 +459,7 @@
 <li>在实际项目中单元测试到底测的是什么？</li>
 <li>确定了该测什么之后应该怎么去写测试用例？</li>
 </ul>
-<p><img src="/images/unit2.jpg" alt="JPG"></p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/unit2.jpg" alt="JPG"></p>
 <h3 id="单元测试到底测的是什么"><a href="#单元测试到底测的是什么" class="headerlink" title="单元测试到底测的是什么"></a>单元测试到底测的是什么</h3><p>就我的认知来看，这些需要测：</p>
 <ul>
 <li>和安全相关的代码逻辑</li>

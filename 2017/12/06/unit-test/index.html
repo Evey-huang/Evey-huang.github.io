@@ -87,17 +87,17 @@
 <meta property="og:site_name" content="EveyWong">
 <meta property="og:description" content="一开始让我学单元测试我是拒绝的，但是无奈师傅交给的任务。看了一早上的测试文章云里雾里差点睡着，下午就决定自己先来动手实践一下单元测试，到底单元测试是什么怎么写结果是怎样。 开始创建项目使用vue-cli先创建一个vuejs项目，这里就不累赘了，另一篇文章《新建Vue项目》有写。  注意！npm install安装依赖的时候要有耐心(其实是我网速慢)千万不要随便停止，因为那可能会漏装了东西导致后面">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/unit-vue1.jpg">
-<meta property="og:image" content="http://yoursite.com/images/unit-vue2.png">
-<meta property="og:image" content="http://yoursite.com/images/unit-vue3.png">
-<meta property="og:image" content="http://yoursite.com/images/unit-vue4.png">
-<meta property="og:image" content="http://yoursite.com/images/unit-vue5.png">
-<meta property="og:image" content="http://yoursite.com/images/unit-vue6.png">
-<meta property="og:updated_time" content="2017-12-21T02:00:58.000Z">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit-vue1.jpg">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit-vue2.png">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit-vue3.png">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit-vue4.png">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit-vue5.png">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/unit-vue6.png">
+<meta property="og:updated_time" content="2017-12-22T05:27:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一个单元测试">
 <meta name="twitter:description" content="一开始让我学单元测试我是拒绝的，但是无奈师傅交给的任务。看了一早上的测试文章云里雾里差点睡着，下午就决定自己先来动手实践一下单元测试，到底单元测试是什么怎么写结果是怎样。 开始创建项目使用vue-cli先创建一个vuejs项目，这里就不累赘了，另一篇文章《新建Vue项目》有写。  注意！npm install安装依赖的时候要有耐心(其实是我网速慢)千万不要随便停止，因为那可能会漏装了东西导致后面">
-<meta name="twitter:image" content="http://yoursite.com/images/unit-vue1.jpg">
+<meta name="twitter:image" content="http://p1cjg886l.bkt.clouddn.com/unit-vue1.jpg">
 
 
 
@@ -354,7 +354,7 @@
       
 
       
-        <p><img src="/images/unit-vue1.jpg" alt="JPG"></p>
+        <p><img src="http://p1cjg886l.bkt.clouddn.com/unit-vue1.jpg" alt="JPG"></p>
 <p>一开始让我学单元测试我是拒绝的，但是无奈师傅交给的任务。看了一早上的测试文章云里雾里差点睡着，下午就决定自己先来动手实践一下单元测试，到底单元测试是什么怎么写结果是怎样。</p>
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><p>使用vue-cli先创建一个vuejs项目，这里就不累赘了，另一篇文章《新建Vue项目》有写。</p>
 <blockquote>
@@ -370,20 +370,20 @@
 <p>我们需要看到刚刚创建的列表，所以我们创建一个新的路由来展示这个组件。在<code>src/router/index.js</code>中创建一个路由，添加完了代码应该是下面这样的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Router from &apos;vue-router&apos;</span><br><span class="line">import HelloWorld from &apos;@/components/HelloWorld&apos;</span><br><span class="line">import List from &apos;@/components/list&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Router)</span><br><span class="line"></span><br><span class="line">export default new Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: &apos;/&apos;,</span><br><span class="line">      name: &apos;HelloWorld&apos;,</span><br><span class="line">      component: HelloWorld</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      path: &apos;/to-do&apos;,</span><br><span class="line">      name: &apos;ToDo&apos;,</span><br><span class="line">      component: List</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>现在，访问<a href="http://localhost:8080/#/to-do" target="_blank" rel="noopener">localhost:8080/#/to-do</a>，可以看到我们做的页面。</p>
-<p><img src="/images/unit-vue2.png" alt="PNG"></p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/unit-vue2.png" alt="PNG"></p>
 <p>首先，我们要测试的是数据的正确性。在<code>test/unit/specs</code>目录下创建一个<code>list.spec.js</code>，并且写入下面的代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 在这个文件中我们describing了list.vue组件，并且创建了一个空的测试，</span><br><span class="line">// 它将要检查这个组件的列表展示，这是一个基本的Mocha测试文件</span><br><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import List from &apos;@/components/list&apos;</span><br><span class="line"></span><br><span class="line">describe(&apos;list.vue&apos;, () =&gt; &#123;</span><br><span class="line">  it(&apos;display items from the list&apos;, () =&gt; &#123;</span><br><span class="line">    // our test goes here</span><br><span class="line">    // build component   我们继承了Vue组件并安装了这个组件</span><br><span class="line">    const Constructor = Vue.extend(List)</span><br><span class="line">    const ListComponent = new Constructor().$mount()</span><br><span class="line">    // 下面是第一个断言，我们使用Chai断言提供的&apos;expect&apos;模式还有&apos;should&apos;和&apos;assert&apos;模式。这个断言用来检查HTML列表中的文本是否和组件的data里的数据列表吻合。</span><br><span class="line">    expect(ListComponent.$el.textContent).to.contain(&apos;play game&apos;) </span><br><span class="line">    // 可以使用ListComponent.$el来获取组件的HTML，用ListComponent.$el.textContent获取HTML内的内容</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>最后就是使用<code>npm run unit</code>来运行<code>cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run</code>。</p>
 <blockquote>
 <p>我就是被卡在了这里，运行<code>npm run unit</code>出现错误</p>
-<p><img src="/images/unit-vue3.png" alt="PNG"></p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/unit-vue3.png" alt="PNG"></p>
 <p>综合github和stack overflow的回答，想了想问题可能出现在依赖安装上，我没有等它自己安装完就停止了，后来又用cnpm安装但是应该没装全，所以我把node_modules卸载了重装，现在还在装网速简直慢到不行</p>
-<p><img src="/images/unit-vue4.png" alt="PNG"></p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/unit-vue4.png" alt="PNG"></p>
 <p>保持这个进度已经很久了，简直崩溃。</p>
 <p>最后建议网络慢的使用cnpm装，我用cnpm装快得飞起。</p>
 </blockquote>
 <p>如果测试都通过了，将会有一个绿色的列表来显示测试报告，让你了解测试都覆盖了哪些代码。</p>
-<p><img src="/images/unit-vue5.png" alt="PNG"></p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/unit-vue5.png" alt="PNG"></p>
 <h4 id="模拟用户输入"><a href="#模拟用户输入" class="headerlink" title="模拟用户输入"></a>模拟用户输入</h4><p>上一步做了一个简单的功能，只能展示数据并不能做交互，下一步要做的就是做简单的交互往to-do list中添加新项目。</p>
 <p>创建一个Input框来输入内容，一个button用来提交内容。</p>
 <p><strong>list.vue</strong></p>
@@ -392,7 +392,7 @@
 <p><strong>list.spec.js</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import List from &apos;@/components/list&apos;</span><br><span class="line"></span><br><span class="line">describe(&apos;list.vue&apos;, () =&gt; &#123;</span><br><span class="line">  it(&apos;add a new item to list on click&apos;, () =&gt; &#123;</span><br><span class="line">    // build component   我们继承了Vue组件并安装了这个组件</span><br><span class="line">    const Constructor = Vue.extend(List)</span><br><span class="line">    const ListComponent = new Constructor().$mount()</span><br><span class="line"></span><br><span class="line">    // set value of new item  给newItem设置内容</span><br><span class="line">    ListComponent.newItem = &apos;brush my teeth&apos;</span><br><span class="line"></span><br><span class="line">    // find button  querySelector可以像选择真的元素一样选择这个按钮。</span><br><span class="line">    const button = ListComponent.$el.querySelector(&apos;button&apos;)</span><br><span class="line"></span><br><span class="line">    // simulate click event  模拟点击事件</span><br><span class="line">    const clickEvent = new window.Event(&apos;click&apos;)</span><br><span class="line">    button.dispatchEvent(clickEvent)</span><br><span class="line">    ListComponent._watcher.run()</span><br><span class="line"></span><br><span class="line">    // assert list contains new item  检查断言列表包含新项目</span><br><span class="line">    expect(ListComponent.$el.textContent).to.contain(&apos;brush my teeth&apos;)</span><br><span class="line">    expect(ListComponent.listItems).to.contain(&apos;brush my teeth&apos;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>运行这个测试文件<code>npm run unit</code></p>
-<p><img src="/images/unit-vue6.png" alt="PNG"></p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/unit-vue6.png" alt="PNG"></p>
 <p>一个完整的成功的单元测试就完成啦~</p>
 
       
