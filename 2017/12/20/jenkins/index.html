@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="jenkins,持续集成,自动化测试," />
+  <meta name="keywords" content="jenkins,自动化测试,持续集成," />
 
 
 
@@ -79,14 +79,15 @@
 
 
 
-<meta name="description" content="单元测试+CI=自动化从测试的目的分类，测试可以分为功能测试和非功能测试，而功能测试又分为单元测试（Unit Test）、功能测试（Functional Test）和集成测试（Integration Test ）等。这里主要讲单元测试的自动化。 上一篇文章前端单元测试初探详细讲了为什么要做单元测试以及如何做单元测试，这">
-<meta name="keywords" content="jenkins,持续集成,自动化测试">
+<meta name="description" content="背景简单直接点，这篇文章就是写如何将自动化测试跟持续集成挂钩起来，怎么将单元测试在jenkins上跑起来。 持续集成整个过程大概是这样： developer在本地工作，将本地工作push到代码仓库（可以是github公有仓库也可以是bitbucket私有仓库），然后会触发CI服务器（CI即持续集成服务器，CI服务器有很">
+<meta name="keywords" content="jenkins,自动化测试,持续集成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自动化测试之单元测试">
+<meta property="og:title" content="从自动化测试到持续集成">
 <meta property="og:url" content="http://yoursite.com/2017/12/20/jenkins/index.html">
 <meta property="og:site_name" content="EveyWong">
-<meta property="og:description" content="单元测试+CI=自动化从测试的目的分类，测试可以分为功能测试和非功能测试，而功能测试又分为单元测试（Unit Test）、功能测试（Functional Test）和集成测试（Integration Test ）等。这里主要讲单元测试的自动化。 上一篇文章前端单元测试初探详细讲了为什么要做单元测试以及如何做单元测试，这一篇文章主要讲如何实现单元测试的自动化。 CI什么是自动化概念什么是持续集成持续">
+<meta property="og:description" content="背景简单直接点，这篇文章就是写如何将自动化测试跟持续集成挂钩起来，怎么将单元测试在jenkins上跑起来。 持续集成整个过程大概是这样： developer在本地工作，将本地工作push到代码仓库（可以是github公有仓库也可以是bitbucket私有仓库），然后会触发CI服务器（CI即持续集成服务器，CI服务器有很多，这里以jenkins做例子。）事先写好的脚本，脚本可以完成编译、单元测试等工">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/jenkins13.jpg">
 <meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/jenkins1.png">
 <meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/jenkins2.png">
 <meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/jenkins3.png">
@@ -99,11 +100,11 @@
 <meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/jenkins12.png">
 <meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/jenkins7.png">
 <meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/jenkins8.png">
-<meta property="og:updated_time" content="2017-12-22T05:17:48.000Z">
+<meta property="og:updated_time" content="2017-12-25T07:51:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自动化测试之单元测试">
-<meta name="twitter:description" content="单元测试+CI=自动化从测试的目的分类，测试可以分为功能测试和非功能测试，而功能测试又分为单元测试（Unit Test）、功能测试（Functional Test）和集成测试（Integration Test ）等。这里主要讲单元测试的自动化。 上一篇文章前端单元测试初探详细讲了为什么要做单元测试以及如何做单元测试，这一篇文章主要讲如何实现单元测试的自动化。 CI什么是自动化概念什么是持续集成持续">
-<meta name="twitter:image" content="http://p1cjg886l.bkt.clouddn.com/jenkins1.png">
+<meta name="twitter:title" content="从自动化测试到持续集成">
+<meta name="twitter:description" content="背景简单直接点，这篇文章就是写如何将自动化测试跟持续集成挂钩起来，怎么将单元测试在jenkins上跑起来。 持续集成整个过程大概是这样： developer在本地工作，将本地工作push到代码仓库（可以是github公有仓库也可以是bitbucket私有仓库），然后会触发CI服务器（CI即持续集成服务器，CI服务器有很多，这里以jenkins做例子。）事先写好的脚本，脚本可以完成编译、单元测试等工">
+<meta name="twitter:image" content="http://p1cjg886l.bkt.clouddn.com/jenkins13.jpg">
 
 
 
@@ -139,7 +140,7 @@
 
 
 
-  <title>自动化测试之单元测试 | EveyWong</title>
+  <title>从自动化测试到持续集成 | EveyWong</title>
   
 
 
@@ -283,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">自动化测试之单元测试</h1>
+          <h1 class="post-title" itemprop="name headline">从自动化测试到持续集成</h1>
         
 
         <div class="post-meta">
@@ -360,32 +361,37 @@
       
 
       
-        <h2 id="单元测试-CI-自动化"><a href="#单元测试-CI-自动化" class="headerlink" title="单元测试+CI=自动化"></a>单元测试+CI=自动化</h2><p>从测试的目的分类，测试可以分为功能测试和非功能测试，而功能测试又分为单元测试（Unit Test）、功能测试（Functional Test）和集成测试（Integration Test ）等。这里主要讲单元测试的自动化。</p>
-<p>上一篇文章<a href="https://evey-huang.github.io./2017/12/08/unit/" target="_blank" rel="noopener">前端单元测试初探</a>详细讲了为什么要做单元测试以及如何做单元测试，这一篇文章主要讲如何实现单元测试的自动化。</p>
-<h3 id="CI"><a href="#CI" class="headerlink" title="CI"></a>CI</h3><h3 id="什么是自动化"><a href="#什么是自动化" class="headerlink" title="什么是自动化"></a>什么是自动化</h3><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h4 id="什么是持续集成"><a href="#什么是持续集成" class="headerlink" title="什么是持续集成"></a>什么是持续集成</h4><p><strong>持续集成</strong>（Continuous integration，简称CI)，指的是频繁地将代码集成到主干。</p>
-<h5 id="持续集成的优点"><a href="#持续集成的优点" class="headerlink" title="持续集成的优点"></a>持续集成的优点</h5><ol>
-<li><strong>快速发现并定位bug，减少风险</strong>。</li>
-<li><strong>提高开发效率</strong>。</li>
-<li><strong>更快速的发布更新</strong>。</li>
-<li>…..</li>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>简单直接点，这篇文章就是写如何将自动化测试跟持续集成挂钩起来，怎么将单元测试在jenkins上跑起来。</p>
+<p>持续集成整个过程大概是这样：</p>
+<p>developer在本地工作，将本地工作push到代码仓库（可以是github公有仓库也可以是bitbucket私有仓库），然后会触发CI服务器（CI即持续集成服务器，CI服务器有很多，这里以jenkins做例子。）事先写好的脚本，脚本可以完成编译、单元测试等工作。最后如果代码没有问题则部署到开发环境。</p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins13.jpg" alt="JPG"></p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ol>
+<li>在本地安装好jenkins并顺利跑起来</li>
+<li>有jenkins账号</li>
 </ol>
-<h5 id="持续集成的目的"><a href="#持续集成的目的" class="headerlink" title="持续集成的目的"></a>持续集成的目的</h5><p>持续集成的目的，就是让产品可以快速迭代，同时还能保持高质量。其核心措施是：代码集成到主干之前，必须通过<strong><u>自动化测试</u></strong>，只要有一个测试用例失败就不能集成。</p>
-<h4 id="什么是持续部署"><a href="#什么是持续部署" class="headerlink" title="什么是持续部署"></a>什么是持续部署</h4><p><strong>持续部署</strong>（Continuous deployment，简称CD），指的是频繁地将软件的新版本，交付给质量团队或者用户，以供评审。如果评审通过，就自动部署到生产环境。</p>
-<p>持续部署的目标是，代码在任何时刻都是可部署的，可以进入生产阶段。</p>
-<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><h3 id="什么是Jenkins"><a href="#什么是Jenkins" class="headerlink" title="什么是Jenkins"></a>什么是Jenkins</h3><h3 id="安装Jenkins"><a href="#安装Jenkins" class="headerlink" title="安装Jenkins"></a>安装Jenkins</h3><h3 id="创建jenkins项目"><a href="#创建jenkins项目" class="headerlink" title="创建jenkins项目"></a>创建jenkins项目</h3><p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins1.png" alt="PNG"></p>
-<h3 id="配置项目的Jenkins-Job"><a href="#配置项目的Jenkins-Job" class="headerlink" title="配置项目的Jenkins Job"></a>配置项目的Jenkins Job</h3><p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins2.png" alt="PNG"></p>
-<p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins3.png" alt="PNG"></p>
+<h3 id="创建jenkins项目"><a href="#创建jenkins项目" class="headerlink" title="创建jenkins项目"></a>创建jenkins项目</h3><p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins1.png" alt="PNG"></p>
+<p>新建一个pipeline风格的项目，名称为unit-test</p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins2.png" alt="PNG"></p>
+<h3 id="Jenkins-Job的基本配置"><a href="#Jenkins-Job的基本配置" class="headerlink" title="Jenkins Job的基本配置"></a>Jenkins Job的基本配置</h3><p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins3.png" alt="PNG"></p>
+<p>pipeline script写的是需要执行的脚本，<code>git branch</code>是指要拉取的测试分支，<code>credentialsId</code>指拉取代码时需要的密钥，<code>url</code>指存放代码的仓库地址。</p>
 <p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins4.png" alt="PNG"></p>
+<p>点击<code>pipeline syntax</code>进入添加插件的页面</p>
+<h3 id="如何配置在jenkins生成测试覆盖率报告"><a href="#如何配置在jenkins生成测试覆盖率报告" class="headerlink" title="如何配置在jenkins生成测试覆盖率报告"></a>如何配置在jenkins生成测试覆盖率报告</h3><p>进入添加插件页面后，选择<code>publish HTML reports</code>插件</p>
 <p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins5.png" alt="PNG"></p>
+<p>填写单元测试覆盖率报告路径和jenkins生成测试报告存放路径，点击<code>代码段生成器</code>按钮生成代码</p>
 <p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins6.png" alt="PNG"></p>
-<p>将代码生成器生成的代码粘贴到pipeline</p>
+<p>将代码生成器生成的代码粘贴到<code>pipeline script</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">    agent &#123; label 'slave0' &#125;</span><br><span class="line">    stages &#123;</span><br><span class="line">        stage('prepare') &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                git branch: '需要测试的分支', credentialsId: '用于拉取代码的密钥', url: 'ssh://代码仓库地址'</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        stage('build') &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                sh 'cnpm install'</span><br><span class="line">                sh 'npm run test' // 执行单元测试</span><br><span class="line">                publishHTML (target: [</span><br><span class="line">                  allowMissing: false,</span><br><span class="line">                  alwaysLinkToLastBuild: false,</span><br><span class="line">                  keepAll: true,</span><br><span class="line">                  reportDir: 'test/unit/coverage/lcov-report', // 项目单元测试覆盖率报告存放路径</span><br><span class="line">                  reportFiles: 'index.html', // 项目单元测试覆盖率报告文件</span><br><span class="line">                  reportName: "RCov Report" // 在jenkins生成的测试报告</span><br><span class="line">                ])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行pipeline脚本"><a href="#执行pipeline脚本" class="headerlink" title="执行pipeline脚本"></a>执行pipeline脚本</h3><p>保存后点击<code>立即构建</code>开始执行pipeline脚本。若是pipeline脚本有变动则需点<code>立即构建</code>，如果只是测试代码有变动则点<code>Replay</code>即可。</p>
 <p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins9.png" alt="PNG"></p>
 <p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins10.png" alt="PNG"></p>
+<p>不管构建成不成功都会有一个日志<code>Logs</code>。若成功点开可查看测试结果，若失败可以查看失败原因然后调整再次进行构建。</p>
 <p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins11.png" alt="PNG"></p>
 <p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins12.png" alt="PNG"></p>
+<h3 id="查看测试报告"><a href="#查看测试报告" class="headerlink" title="查看测试报告"></a>查看测试报告</h3><p>构建成功后会生成测试报告，点击<code>RCov Report</code>查看单元测试覆盖率。</p>
 <p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins7.png" alt="PNG"></p>
 <p><img src="http://p1cjg886l.bkt.clouddn.com/jenkins8.png" alt="PNG"></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>写了这么多，又是自动化测试又是持续集成什么的看似很高大上，但是做完这些也仅仅是入门而已，没错就是入门。离真正做到自动化还远着呢。私以为，搭环境这些都不难，难的是如何把单元测试用例写好，如何坚持下去。</p>
 
       
     </div>
@@ -405,9 +411,9 @@
           
             <a href="/tags/jenkins/" rel="tag"># jenkins</a>
           
-            <a href="/tags/持续集成/" rel="tag"># 持续集成</a>
-          
             <a href="/tags/自动化测试/" rel="tag"># 自动化测试</a>
+          
+            <a href="/tags/持续集成/" rel="tag"># 持续集成</a>
           
         </div>
       
@@ -591,7 +597,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单元测试-CI-自动化"><span class="nav-number">1.</span> <span class="nav-text">单元测试+CI=自动化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CI"><span class="nav-number">1.1.</span> <span class="nav-text">CI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是自动化"><span class="nav-number">1.2.</span> <span class="nav-text">什么是自动化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.3.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是持续集成"><span class="nav-number">1.3.1.</span> <span class="nav-text">什么是持续集成</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#持续集成的优点"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">持续集成的优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#持续集成的目的"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">持续集成的目的</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是持续部署"><span class="nav-number">1.3.2.</span> <span class="nav-text">什么是持续部署</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins"><span class="nav-number">2.</span> <span class="nav-text">Jenkins</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Jenkins"><span class="nav-number">2.1.</span> <span class="nav-text">什么是Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Jenkins"><span class="nav-number">2.2.</span> <span class="nav-text">安装Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建jenkins项目"><span class="nav-number">2.3.</span> <span class="nav-text">创建jenkins项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置项目的Jenkins-Job"><span class="nav-number">2.4.</span> <span class="nav-text">配置项目的Jenkins Job</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建jenkins项目"><span class="nav-number">2.2.</span> <span class="nav-text">创建jenkins项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jenkins-Job的基本配置"><span class="nav-number">2.3.</span> <span class="nav-text">Jenkins Job的基本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何配置在jenkins生成测试覆盖率报告"><span class="nav-number">2.4.</span> <span class="nav-text">如何配置在jenkins生成测试覆盖率报告</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行pipeline脚本"><span class="nav-number">2.5.</span> <span class="nav-text">执行pipeline脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看测试报告"><span class="nav-number">2.6.</span> <span class="nav-text">查看测试报告</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
             
 
           </div>
