@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="正则表达式," />
+  <meta name="keywords" content="ES6,单元测试," />
 
 
 
@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)   匹配IP地址，比如192.168.1.1   ((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)\/(3[0">
-<meta name="keywords" content="正则表达式">
+<meta name="description" content="背景最近项目重构需要添加单元测试环境到项目中去，由于之前已经有了经验和写了教程，直接照着来就是了，但是却出现了bug。  问题Google发现这是一个es6浏览器兼容性问题。 polyfill由于Babel默认只转换各种ES2015语法，而不转换新的API，比如Promise，这时我们需要提供一些ployfill来模拟">
+<meta name="keywords" content="ES6,单元测试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用正则表达式">
-<meta property="og:url" content="http://yoursite.com/2017/12/12/regexp/index.html">
+<meta property="og:title" content="使用ES6的浏览器兼容性问题">
+<meta property="og:url" content="http://yoursite.com/2018/01/20/es6/index.html">
 <meta property="og:site_name" content="EveyWong">
-<meta property="og:description" content="((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)   匹配IP地址，比如192.168.1.1   ((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)\/(3[0-2]|[0-2]\d)   匹配subnet（子网掩码），比如192.168">
+<meta property="og:description" content="背景最近项目重构需要添加单元测试环境到项目中去，由于之前已经有了经验和写了教程，直接照着来就是了，但是却出现了bug。  问题Google发现这是一个es6浏览器兼容性问题。 polyfill由于Babel默认只转换各种ES2015语法，而不转换新的API，比如Promise，这时我们需要提供一些ployfill来模拟出这样一个提供原生支持功能的浏览器环境。主要有两种方式：babel-runti">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-22T05:24:48.000Z">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/es1.jpg">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/es.png">
+<meta property="og:updated_time" content="2018-01-20T04:53:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用正则表达式">
-<meta name="twitter:description" content="((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)   匹配IP地址，比如192.168.1.1   ((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)\/(3[0-2]|[0-2]\d)   匹配subnet（子网掩码），比如192.168">
+<meta name="twitter:title" content="使用ES6的浏览器兼容性问题">
+<meta name="twitter:description" content="背景最近项目重构需要添加单元测试环境到项目中去，由于之前已经有了经验和写了教程，直接照着来就是了，但是却出现了bug。  问题Google发现这是一个es6浏览器兼容性问题。 polyfill由于Babel默认只转换各种ES2015语法，而不转换新的API，比如Promise，这时我们需要提供一些ployfill来模拟出这样一个提供原生支持功能的浏览器环境。主要有两种方式：babel-runti">
+<meta name="twitter:image" content="http://p1cjg886l.bkt.clouddn.com/es1.jpg">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/12/regexp/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/20/es6/"/>
 
 
 
 
 
-  <title>常用正则表达式 | EveyWong</title>
+  <title>使用ES6的浏览器兼容性问题 | EveyWong</title>
   
 
 
@@ -253,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/12/regexp/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/20/es6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
@@ -270,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">常用正则表达式</h1>
+          <h1 class="post-title" itemprop="name headline">使用ES6的浏览器兼容性问题</h1>
         
 
         <div class="post-meta">
@@ -282,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T21:58:21+08:00">
-                2017-12-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T11:38:18+08:00">
+                2018-01-20
               </time>
             
 
@@ -305,8 +308,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
+                  <a href="/categories/单元测试/" itemprop="url" rel="index">
+                    <span itemprop="name">单元测试</span>
                   </a>
                 </span>
 
@@ -347,81 +350,25 @@
       
 
       
-        <ul>
-<li>((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)</li>
-</ul>
-<blockquote>
-<p>匹配IP地址，比如192.168.1.1</p>
-</blockquote>
-<ul>
-<li>((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)\/(3[0-2]|[0-2]\d)</li>
-</ul>
-<blockquote>
-<p>匹配subnet（子网掩码），比如192.168.1.1/22</p>
-</blockquote>
-<ul>
-<li>((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)~((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)</li>
-</ul>
-<blockquote>
-<p> 匹配IP范围，比如192.168.0.1~192.168.0.2</p>
-</blockquote>
-<ul>
-<li>((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)\~(25[0-5]|2[0-4]\d|[01]?\d?\d)</li>
-</ul>
-<blockquote>
-<p>比如：192.168.1.1~10</p>
-</blockquote>
-<ul>
-<li>/[\x00-\xff]+/g</li>
-</ul>
-<blockquote>
-<p>匹配ASCII字符串，只匹配ASCII字符，ASCII字符包括什么自行google</p>
-</blockquote>
-<ul>
-<li>/^((http|https|ftp):\/\/)((((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d))|([a-zA-Z0-9][-a-zA-Z0-9]{0,62})((.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+?)?):?([0-9]|[1-9]\d|[1-9]\d{2}|[1-9]\d{3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])?\/$</li>
-</ul>
-<blockquote>
-<p>匹配：</p>
-<ol>
-<li><a href="http://{IP}/" target="_blank" rel="noopener">http://{IP}/</a></li>
-<li><a href="http://{IP}:端口/" target="_blank" rel="noopener">http://{IP}:端口/</a></li>
-<li><a href="http://{域名}/" target="_blank" rel="noopener">http://{域名}/</a></li>
-<li><a href="http://{域名}：端口/" target="_blank" rel="noopener">http://{域名}：端口/</a></li>
+        <p><img src="http://p1cjg886l.bkt.clouddn.com/es1.jpg" alt="插图"></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>最近项目重构需要添加单元测试环境到项目中去，由于之前已经有了经验和写了教程，直接照着来就是了，但是却出现了bug。</p>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/es.png" alt="es6 bug"></p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>Google发现这是一个<u>es6浏览器兼容性问题</u>。</p>
+<h3 id="polyfill"><a href="#polyfill" class="headerlink" title="polyfill"></a>polyfill</h3><p>由于Babel默认只转换各种ES2015语法，而不转换新的API，比如<code>Promise</code>，这时我们需要提供一些<code>ployfill</code>来模拟出这样一个提供原生支持功能的浏览器环境。主要有两种方式：<code>babel-runtime</code>和<code>babel-polyfill</code>，这里主要讲<code>babel-polyfill</code>。</p>
+<h4 id="babel-polypill"><a href="#babel-polypill" class="headerlink" title="babel-polypill"></a>babel-polypill</h4><p><code>babel-polyfill</code>是针对全局环境的，引入它浏览器就好像具备了规范里定义的完整的特性，一旦引入，就会跑一个<code>babel-polyfill</code>实例。</p>
+<h5 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h5><ol>
+<li>安装</li>
 </ol>
-<p>比如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-polyfill</span><br></pre></td></tr></table></figure>
 <ol>
-<li><a href="http://192.168.0.1/" target="_blank" rel="noopener">http://192.168.0.1/</a></li>
-<li><a href="http://192.168.0.1:8080/" target="_blank" rel="noopener">http://192.168.0.1:8080/</a></li>
-<li><a href="http://www.baidu.com/" target="_blank" rel="noopener">http://www.baidu.com/</a></li>
-<li><a href="http://www.baidu.com:8080/" target="_blank" rel="noopener">http://www.baidu.com:8080/</a></li>
+<li>在入口文件引入</li>
 </ol>
-</blockquote>
-<ul>
-<li>匹配数字</li>
-</ul>
-<blockquote>
-<ol>
-<li>单个数字</li>
-</ol>
-<p>/[0-9]/或/\d/</p>
-<ol>
-<li>多个数字</li>
-</ol>
-<p>/[0-9]<em>/或/[0-9]+/或/\d+/或/\d</em>/</p>
-</blockquote>
-<ul>
-<li>/[\w-]+/</li>
-</ul>
-<blockquote>
-<p>匹配数字字母下划线及短横线</p>
-</blockquote>
-<ul>
-<li>/(6553[0-5]|655[0-2]\d|65[0-4]\d{2}|65[0-4]\d{2}|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{3}|[1-9]\d{2}|[1-9]\d|[0-9])/</li>
-<li>/^([0-9]|[1-9]\d|[1-9]\d{2}|[1-9]\d{3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$/</li>
-</ul>
-<blockquote>
-<p>匹配端口号，一般0-65535。两种写法都可以，第一种就是把最大的数提到最前面不需要开始和结尾的符号，第二种就是最小的在最前面需要开始和结尾符号不然匹配不到</p>
-</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span></span><br></pre></td></tr></table></figure>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>本次bug的引起主要是因为添加了单元测试环境，所以引入的时候应该在单元测试环境配置文件里引入，在<code>karma.conf.js</code>中<code>files</code>字段中引入：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'../../node_modules/babel-polyfill/dist/polyfill.js'</span></span><br></pre></td></tr></table></figure>
+<p>具体这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">files: [</span><br><span class="line">  <span class="string">'../../node_modules/babel-polyfill/dist/polyfill.js'</span>,</span><br><span class="line">  <span class="string">'./index.js'</span> <span class="comment">// 入口文件</span></span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>浏览器兼容是个坑。</p>
 
       
     </div>
@@ -439,7 +386,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/正则表达式/" rel="tag"># 正则表达式</a>
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
+            <a href="/tags/单元测试/" rel="tag"># 单元测试</a>
           
         </div>
       
@@ -452,8 +401,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/12/xmind/" rel="next" title="Ubuntu系统安装Xmind">
-                <i class="fa fa-chevron-left"></i> Ubuntu系统安装Xmind
+              <a href="/2018/01/12/danlian/" rel="next" title="《单恋》">
+                <i class="fa fa-chevron-left"></i> 《单恋》
               </a>
             
           </div>
@@ -461,10 +410,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/12/regexp1/" rel="prev" title="RegExp正则表达式基本使用">
-                RegExp正则表达式基本使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -521,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -608,6 +562,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#polyfill"><span class="nav-number">2.1.</span> <span class="nav-text">polyfill</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#babel-polypill"><span class="nav-number">2.1.1.</span> <span class="nav-text">babel-polypill</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用法："><span class="nav-number">2.1.1.1.</span> <span class="nav-text">用法：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
