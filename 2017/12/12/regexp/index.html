@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -50,19 +50,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)   匹配IP地址，比如192.168.1.1   ((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)\/(3[0">
+<meta name="description" content="匹配IP地址，比如192.168.1.1  1/((25[0-5]|2[0-4]\d|[01]?\d?\d).)&amp;#123;3&amp;#125;(25[0-5]|2[0-4]\d|[01]?\d?\d)/  匹配subnet（子网掩码），比如192.168.1.1/22  1/((25[0-5]|2[0-4]">
 <meta name="keywords" content="正则表达式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用正则表达式">
 <meta property="og:url" content="http://yoursite.com/2017/12/12/regexp/index.html">
 <meta property="og:site_name" content="EveyWong">
-<meta property="og:description" content="((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)   匹配IP地址，比如192.168.1.1   ((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)\/(3[0-2]|[0-2]\d)   匹配subnet（子网掩码），比如192.168">
+<meta property="og:description" content="匹配IP地址，比如192.168.1.1  1/((25[0-5]|2[0-4]\d|[01]?\d?\d).)&amp;#123;3&amp;#125;(25[0-5]|2[0-4]\d|[01]?\d?\d)/  匹配subnet（子网掩码），比如192.168.1.1/22  1/((25[0-5]|2[0-4]\d|[01]?\d?\d).)&amp;#123;3&amp;#125;(25[0-5]|2[0-4]\d|">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-23T11:03:39.000Z">
+<meta property="og:updated_time" content="2018-01-24T08:32:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用正则表达式">
-<meta name="twitter:description" content="((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)   匹配IP地址，比如192.168.1.1   ((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)\/(3[0-2]|[0-2]\d)   匹配subnet（子网掩码），比如192.168">
+<meta name="twitter:description" content="匹配IP地址，比如192.168.1.1  1/((25[0-5]|2[0-4]\d|[01]?\d?\d).)&amp;#123;3&amp;#125;(25[0-5]|2[0-4]\d|[01]?\d?\d)/  匹配subnet（子网掩码），比如192.168.1.1/22  1/((25[0-5]|2[0-4]\d|[01]?\d?\d).)&amp;#123;3&amp;#125;(25[0-5]|2[0-4]\d|">
 
 
 
@@ -98,8 +98,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
+    scheme: 'Mist',
+    version: '5.1.3',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -191,6 +191,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -238,7 +258,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -304,6 +324,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 阅读
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
           
 
@@ -323,80 +348,52 @@
 
       
         <ul>
-<li>((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)</li>
+<li>匹配IP地址，比如192.168.1.1</li>
 </ul>
-<blockquote>
-<p>匹配IP地址，比如192.168.1.1</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/((25[0-5]|2[0-4]\d|[01]?\d?\d).)&#123;3&#125;(25[0-5]|2[0-4]\d|[01]?\d?\d)/</span><br></pre></td></tr></table></figure>
 <ul>
-<li>((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)\/(3[0-2]|[0-2]\d)</li>
+<li>匹配subnet（子网掩码），比如192.168.1.1/22</li>
 </ul>
-<blockquote>
-<p>匹配subnet（子网掩码），比如192.168.1.1/22</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/((25[0-5]|2[0-4]\d|[01]?\d?\d).)&#123;3&#125;(25[0-5]|2[0-4]\d|[01]?\d?\d)\/(3[0-2]|[0-2]\d)/</span><br></pre></td></tr></table></figure>
 <ul>
-<li>((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)~((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)</li>
+<li>匹配IP范围，比如192.168.0.1~192.168.0.2</li>
 </ul>
-<blockquote>
-<p> 匹配IP范围，比如192.168.0.1~192.168.0.2</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/((25[0-5]|2[0-4]\d|[01]?\d?\d).)&#123;3&#125;(25[0-5]|2[0-4]\d|[01]?\d?\d)~((25[0-5]|2[0-4]\d|[01]?\d?\d).)&#123;3&#125;(25[0-5]|2[0-4]\d|[01]?\d?\d)/</span><br></pre></td></tr></table></figure>
 <ul>
-<li>((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d)\~(25[0-5]|2[0-4]\d|[01]?\d?\d)</li>
+<li>比如：192.168.1.1~10</li>
 </ul>
-<blockquote>
-<p>比如：192.168.1.1~10</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/((25[0-5]|2[0-4]\d|[01]?\d?\d).)&#123;3&#125;(25[0-5]|2[0-4]\d|[01]?\d?\d)\~(25[0-5]|2[0-4]\d|[01]?\d?\d)/</span><br></pre></td></tr></table></figure>
 <ul>
-<li>/[\x00-\xff]+/g</li>
+<li>匹配：1.<a href="http://{IP}/" target="_blank" rel="noopener">http://{IP}/</a> 2.<a href="http://{IP}:端口/" target="_blank" rel="noopener">http://{IP}:端口/</a> 3.<a href="http://{域名}/" target="_blank" rel="noopener">http://{域名}/</a> 4.<a href="http://{域名}：端口/" target="_blank" rel="noopener">http://{域名}：端口/</a></li>
 </ul>
-<blockquote>
-<p>匹配ASCII字符串，只匹配ASCII字符，ASCII字符包括什么自行google</p>
-</blockquote>
 <ul>
-<li>/^((http|https|ftp):\/\/)((((25[0-5]|2[0-4]\d|[01]?\d?\d).){3}(25[0-5]|2[0-4]\d|[01]?\d?\d))|([a-zA-Z0-9][-a-zA-Z0-9]{0,62})((.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+?)?):?([0-9]|[1-9]\d|[1-9]\d{2}|[1-9]\d{3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])?\/$</li>
+<li>比如：1.<a href="http://192.168.0.1/" target="_blank" rel="noopener">http://192.168.0.1/</a> 2.<a href="http://192.168.0.1:8080/" target="_blank" rel="noopener">http://192.168.0.1:8080/</a> 3.<a href="http://www.baidu.com/" target="_blank" rel="noopener">http://www.baidu.com/</a> 4.<a href="http://www.baidu.com:8080/" target="_blank" rel="noopener">http://www.baidu.com:8080/</a></li>
 </ul>
-<blockquote>
-<p>匹配：</p>
-<ol>
-<li><a href="http://{IP}/" target="_blank" rel="noopener">http://{IP}/</a></li>
-<li><a href="http://{IP}:端口/" target="_blank" rel="noopener">http://{IP}:端口/</a></li>
-<li><a href="http://{域名}/" target="_blank" rel="noopener">http://{域名}/</a></li>
-<li><a href="http://{域名}：端口/" target="_blank" rel="noopener">http://{域名}：端口/</a></li>
-</ol>
-<p>比如：</p>
-<ol>
-<li><a href="http://192.168.0.1/" target="_blank" rel="noopener">http://192.168.0.1/</a></li>
-<li><a href="http://192.168.0.1:8080/" target="_blank" rel="noopener">http://192.168.0.1:8080/</a></li>
-<li><a href="http://www.baidu.com/" target="_blank" rel="noopener">http://www.baidu.com/</a></li>
-<li><a href="http://www.baidu.com:8080/" target="_blank" rel="noopener">http://www.baidu.com:8080/</a></li>
-</ol>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^((http|https|ftp):\/\/)((((25[0-5]|2[0-4]\d|[01]?\d?\d).)&#123;3&#125;(25[0-5]|2[0-4]\d|[01]?\d?\d))|(a-zA-Z0-9&#123;0,62&#125;)((.a-zA-Z0-9&#123;0,62&#125;)+?)?):?([0-9]|[1-9]\d|[1-9]\d&#123;2&#125;|[1-9]\d&#123;3&#125;|[1-5]\d&#123;4&#125;|6[0-4]\d&#123;3&#125;|65[0-4]\d&#123;2&#125;|655[0-2]\d|6553[0-5])?\/$</span><br></pre></td></tr></table></figure>
 <ul>
-<li>匹配数字</li>
+<li>匹配端口号，一般0-65535。两种写法都可以，第一种就是把最大的数提到最前面不需要开始和结尾的符号，第二种就是最小的在最前面需要开始和结尾符号不然匹配不到</li>
 </ul>
-<blockquote>
-<ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1./(6553[0-5]|655[0-2]\d|65[0-4]\d&#123;2&#125;|65[0-4]\d&#123;2&#125;|6[0-4]\d&#123;3&#125;|[1-5]\d&#123;4&#125;|[1-9]\d&#123;3&#125;|[1-9]\d&#123;2&#125;|[1-9]\d|[0-9])/</span><br><span class="line">2./^([0-9]|[1-9]\d|[1-9]\d&#123;2&#125;|[1-9]\d&#123;3&#125;|[1-5]\d&#123;4&#125;|6[0-4]\d&#123;3&#125;|65[0-4]\d&#123;2&#125;|655[0-2]\d|6553[0-5])$/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>匹配ASCII字符串，只匹配ASCII字符，ASCII字符包括什么自行google</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[\x00-\xff]+/g</span><br></pre></td></tr></table></figure>
+<ul>
+<li>匹配字母/数字/下划线/短横线/中文</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^([\w-]+|[\u4e00-\u9fa5]+)$/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>匹配数字字母下划线及短横线</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[\w-]+/</span><br></pre></td></tr></table></figure>
+<ul>
 <li>单个数字</li>
-</ol>
-<p>/[0-9]/或/\d/</p>
-<ol>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[0-9]/或/\d/</span><br></pre></td></tr></table></figure>
+<ul>
 <li>多个数字</li>
-</ol>
-<p>/[0-9]<em>/或/[0-9]+/或/\d+/或/\d</em>/</p>
-</blockquote>
-<ul>
-<li>/[\w-]+/</li>
 </ul>
-<blockquote>
-<p>匹配数字字母下划线及短横线</p>
-</blockquote>
-<ul>
-<li>/(6553[0-5]|655[0-2]\d|65[0-4]\d{2}|65[0-4]\d{2}|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{3}|[1-9]\d{2}|[1-9]\d|[0-9])/</li>
-<li>/^([0-9]|[1-9]\d|[1-9]\d{2}|[1-9]\d{3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$/</li>
-</ul>
-<blockquote>
-<p>匹配端口号，一般0-65535。两种写法都可以，第一种就是把最大的数提到最前面不需要开始和结尾的符号，第二种就是最小的在最前面需要开始和结尾符号不然匹配不到</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[0-9]/或/[0-9]+/或/\d+/或/\d/</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -469,6 +466,11 @@
           
 
   
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjI1NC84ODE4"></div>
+    </div>
+
+  
 
 
 
@@ -496,6 +498,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="Eveywong" />
+            
               <p class="site-author-name" itemprop="name">Eveywong</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -507,7 +513,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -540,6 +546,28 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Evey-huang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:evey_wong@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/yourname" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -568,7 +596,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Eveywong</span>
 
@@ -584,12 +612,20 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
 
 
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
 
 
 
@@ -675,25 +711,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
 
 
 
@@ -717,6 +753,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
