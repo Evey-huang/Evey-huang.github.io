@@ -79,18 +79,23 @@
 
 
 
-<meta name="description" content="现象从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index” 问题hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。 解决方案一：重新clone一个新的next主题到本地弊端：每次都要这么做，如果你的主题有自定义，那么每次都要更新配置文件，">
+<meta name="description" content="现象从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index” 问题hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。 解决方案一：重新clone一个新的next主题到本地从github上clone博客代码到本地后，重新clone一次next">
 <meta name="keywords" content="git,submodule">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Submodules子模块解决Hexo第三方主题同步更新问题">
 <meta property="og:url" content="http://yoursite.com/2018/01/24/submodules/index.html">
 <meta property="og:site_name" content="EveyWong">
-<meta property="og:description" content="现象从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index” 问题hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。 解决方案一：重新clone一个新的next主题到本地弊端：每次都要这么做，如果你的主题有自定义，那么每次都要更新配置文件，因为重新clone下来的主题是初始的。 1234567$ git clone h">
+<meta property="og:description" content="现象从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index” 问题hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。 解决方案一：重新clone一个新的next主题到本地从github上clone博客代码到本地后，重新clone一次next主题到本地。 具体操作： 1234567$ git clone https:/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-31T09:51:03.000Z">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/cry1.jpg">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/submodule1.png">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/submodule2.png">
+<meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/submodule3.png">
+<meta property="og:updated_time" content="2018-01-31T11:44:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Submodules子模块解决Hexo第三方主题同步更新问题">
-<meta name="twitter:description" content="现象从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index” 问题hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。 解决方案一：重新clone一个新的next主题到本地弊端：每次都要这么做，如果你的主题有自定义，那么每次都要更新配置文件，因为重新clone下来的主题是初始的。 1234567$ git clone h">
+<meta name="twitter:description" content="现象从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index” 问题hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。 解决方案一：重新clone一个新的next主题到本地从github上clone博客代码到本地后，重新clone一次next主题到本地。 具体操作： 1234567$ git clone https:/">
+<meta name="twitter:image" content="http://p1cjg886l.bkt.clouddn.com/cry1.jpg">
 
 
 
@@ -347,24 +352,38 @@
       
 
       
-        <h3 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h3><p>从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index”</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h3 id="一：重新clone一个新的next主题到本地"><a href="#一：重新clone一个新的next主题到本地" class="headerlink" title="一：重新clone一个新的next主题到本地"></a>一：重新clone一个新的next主题到本地</h3><p>弊端：每次都要这么做，如果你的主题有自定义，那么每次都要更新配置文件，因为重新clone下来的主题是初始的。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/Hexo-Blog.git</span><br><span class="line"><span class="meta">$</span> cd Hexo-Blog</span><br><span class="line"><span class="meta">$</span> npm install</span><br><span class="line"><span class="meta">$</span> rm -rf themes/next/</span><br><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/hexo-theme-next.git themes/next</span><br><span class="line"><span class="meta">$</span> hexo g</span><br><span class="line"><span class="meta">$</span> hexo s</span><br></pre></td></tr></table></figure>
-<p>更改主题配置，加上自定义配置，刷新。</p>
-<h3 id="二：使用git-submodules管理子模块"><a href="#二：使用git-submodules管理子模块" class="headerlink" title="二：使用git submodules管理子模块"></a>二：使用git submodules管理子模块</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/Hexo-Blog.git</span><br><span class="line"><span class="meta">$</span> cd Hexo-Blog</span><br><span class="line"><span class="meta">$</span> npm install</span><br><span class="line"><span class="meta">$</span> rm -rf themes/next/</span><br><span class="line"><span class="meta">$</span> git submodule add https://github.com/Evey-huang/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
-<h4 id="Q1"><a href="#Q1" class="headerlink" title="Q1:"></a>Q1:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;themes/next&apos; already exists in the index</span><br></pre></td></tr></table></figure>
-<h5 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git rm -r --cached themes/next</span><br></pre></td></tr></table></figure>
-<p>然后再次执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git submodule add https://github.com/Evey-huang/hexo-theme-next.git themes/next</span><br><span class="line"><span class="meta">$</span> hexo g</span><br><span class="line"><span class="meta">$</span> hexo s</span><br></pre></td></tr></table></figure>
-<p>更改主题配置，加上自定义配置，刷新</p>
-<p>修改.git/config</p>
-<p>修改.git/module/themes/next/config</p>
-<p>在themes/next提交配置到Github</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git add .</span><br><span class="line"><span class="meta">$</span> git commit -m "update"</span><br><span class="line"><span class="meta">$</span> git push origin master</span><br></pre></td></tr></table></figure>
-<p>在另一台电脑上</p>
-<p>执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/Blog.git</span><br><span class="line"><span class="meta">$</span> cd Blog</span><br><span class="line"><span class="meta">$</span> git submodule update --init</span><br><span class="line"><span class="meta">$</span> cd themes/next</span><br><span class="line"><span class="meta">$</span> git pull origin master</span><br></pre></td></tr></table></figure>
+        <p><img src="http://p1cjg886l.bkt.clouddn.com/cry1.jpg" alt="最近的状态"></p>
+<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index”</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="一：重新clone一个新的next主题到本地"><a href="#一：重新clone一个新的next主题到本地" class="headerlink" title="一：重新clone一个新的next主题到本地"></a>一：重新clone一个新的next主题到本地</h3><p>从github上clone博客代码到本地后，重新clone一次next主题到本地。</p>
+<p>具体操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/Blog.git (克隆远程代码到本地)</span><br><span class="line"><span class="meta">$</span> cd Blog (进入博客根目录)</span><br><span class="line"><span class="meta">$</span> npm install (视情况而定，安装依赖)</span><br><span class="line"><span class="meta">$</span> rm -rf themes/next/ (移除空的主题目录)</span><br><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/hexo-theme-next.git themes/next (克隆新的主题并指定本地存储目录为 themes/next)</span><br><span class="line"><span class="meta">$</span> hexo g (部署)</span><br><span class="line"><span class="meta">$</span> hexo s (启动)</span><br></pre></td></tr></table></figure>
+<p>弊端：每次都要这么做，如果你的主题有自定义，那么每次都要更新配置文件，因为重新clone下来的主题是初始的。</p>
+<h3 id="二：使用git-submodule管理子模块"><a href="#二：使用git-submodule管理子模块" class="headerlink" title="二：使用git submodule管理子模块"></a>二：使用git submodule管理子模块</h3><p>什么是<a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97" target="_blank" rel="noopener">submodule</a>？<code>git submodule</code>是一个多项目使用共同类库的工具，允许类库项目做为<code>repository</code>，子项目作为一个单独的<code>git项目</code>存在父项目中，子项目可以有自己独立的<code>commit</code>，<code>push</code>，<code>pull</code>。而父项目以<code>submodule</code>的形式包含子项目，父项目可以指定子项目<code>header</code>，父项目中的提交信息包含<code>submodule</code>的信息，在<code>clone父项目</code>的时候可以把<code>submodule</code>初始化。</p>
+<p>在这里，博客<code>Blog</code>为父项目，<code>hexo next主题</code>为子项目独立存在于Blog中。</p>
+<p><strong>解决第三方库更新问题就是<code>fork+submodule</code>。即先在github上fork next主题仓库，然后再使用submodule。</strong></p>
+<p>具体操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/Blog.git (克隆远程代码到本地)</span><br><span class="line"><span class="meta">$</span> cd Blog (进入博客根目录)</span><br><span class="line"><span class="meta">$</span> npm install (视情况而定，安装依赖)</span><br><span class="line"><span class="meta">$</span> rm -rf themes/next/ (移除空的主题文件夹)</span><br><span class="line"><span class="meta">$</span> git submodule add https://github.com/Evey-huang/hexo-theme-next.git themes/next (克隆新的主题并指定本地存储目录为 themes/next)</span><br></pre></td></tr></table></figure>
+<p>在执行第5步时出现了下面这个问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;themes/next&apos; already exists in the index</span><br></pre></td></tr></table></figure>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git rm -r --cached themes/next</span><br></pre></td></tr></table></figure>
+<p>然后再次执行第5步：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git submodule add https://github.com/Evey-huang/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+<p>修改.git/config和.git/module/themes/next/config文件，在<code>github</code>前面加上自己的github名称<code>Evey-huang@</code>（不修改的话提交代码会因为没有权限而失败）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> vim .git/config</span><br></pre></td></tr></table></figure>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/submodule1.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> vim .git/module/themes/next/config</span><br></pre></td></tr></table></figure>
+<p><img src="http://p1cjg886l.bkt.clouddn.com/submodule2.png" alt=""></p>
+<p>做完以上修改后，可以更新next主题的配置，将自己的自定义配置覆盖原来的配置，然后提交到远程仓库<code>Evey-huang/hexo-theme-next</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd themes/next</span><br><span class="line"><span class="meta">$</span> git add .</span><br><span class="line"><span class="meta">$</span> git commit -m "update"</span><br><span class="line"><span class="meta">$</span> git push origin master</span><br></pre></td></tr></table></figure>
+<p>提交成功可以在github上看到有更改：<br><img src="http://p1cjg886l.bkt.clouddn.com/submodule3.png" alt=""></p>
+<p>分割线——————————————————————————</p>
+<p>以上是添加submodule以及更新next主题的全部步骤，做完这些，无论你换多少台电脑都可以快速地开始工作更新文章啦~</p>
+<p>换了电脑后如何快速开始工作？</p>
+<p>具体操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/Blog.git</span><br><span class="line"><span class="meta">$</span> cd Blog</span><br><span class="line"><span class="meta">$</span> git submodule update --init</span><br><span class="line"><span class="meta">$</span> cd themes/next</span><br><span class="line"><span class="meta">$</span> git pull origin master (如果不做这一步，就不能更新到最新的配置)</span><br><span class="line"><span class="meta">$</span> hexo g</span><br><span class="line"><span class="meta">$</span> hexo s</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>其实之前就已经发现每次next主题都不能更新到github，但是工作没有受到影响就忽略了，一直拖着不解决这个问题，直到遇到了才去解决，一开始就胡乱去google得到很多教程，跟着几遍下来发现都不成功，觉得自己大概是[中了邪了]，后面仔细看了<a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97" target="_blank" rel="noopener">官方解释</a>才对submodule有深入的了解，知道其工作原理，然后梳理一下思路才慢慢做成功了，于是有了这篇文章，回过头去看步骤真的很简单，只怪自己当时没看清。</p>
 
       
     </div>
@@ -572,7 +591,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#现象"><span class="nav-number">1.</span> <span class="nav-text">现象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一：重新clone一个新的next主题到本地"><span class="nav-number">4.</span> <span class="nav-text">一：重新clone一个新的next主题到本地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二：使用git-submodules管理子模块"><span class="nav-number">5.</span> <span class="nav-text">二：使用git submodules管理子模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Q1"><span class="nav-number">5.1.</span> <span class="nav-text">Q1:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案："><span class="nav-number">5.1.1.</span> <span class="nav-text">解决方案：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#现象"><span class="nav-number">1.</span> <span class="nav-text">现象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一：重新clone一个新的next主题到本地"><span class="nav-number">3.1.</span> <span class="nav-text">一：重新clone一个新的next主题到本地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二：使用git-submodule管理子模块"><span class="nav-number">3.2.</span> <span class="nav-text">二：使用git submodule管理子模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
