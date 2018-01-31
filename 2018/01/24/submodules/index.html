@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="git,submodule," />
 
 
 
@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="现象从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index” 问题hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。 解决方案一：重新clone一个新的next主题到本地弊端：每次都要这么做，如果你的主题有自定义，那么每次都要更新配置文件，">
+<meta name="keywords" content="git,submodule">
 <meta property="og:type" content="article">
-<meta property="og:title" content="submodules">
+<meta property="og:title" content="Submodules子模块解决Hexo第三方主题同步更新问题">
 <meta property="og:url" content="http://yoursite.com/2018/01/24/submodules/index.html">
 <meta property="og:site_name" content="EveyWong">
+<meta property="og:description" content="现象从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index” 问题hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。 解决方案一：重新clone一个新的next主题到本地弊端：每次都要这么做，如果你的主题有自定义，那么每次都要更新配置文件，因为重新clone下来的主题是初始的。 1234567$ git clone h">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-24T08:10:17.000Z">
+<meta property="og:updated_time" content="2018-01-31T09:51:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="submodules">
+<meta name="twitter:title" content="Submodules子模块解决Hexo第三方主题同步更新问题">
+<meta name="twitter:description" content="现象从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index” 问题hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。 解决方案一：重新clone一个新的next主题到本地弊端：每次都要这么做，如果你的主题有自定义，那么每次都要更新配置文件，因为重新clone下来的主题是初始的。 1234567$ git clone h">
 
 
 
@@ -122,7 +126,7 @@
 
 
 
-  <title>submodules | EveyWong</title>
+  <title>Submodules子模块解决Hexo第三方主题同步更新问题 | EveyWong</title>
   
 
 
@@ -266,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">submodules</h1>
+          <h1 class="post-title" itemprop="name headline">Submodules子模块解决Hexo第三方主题同步更新问题</h1>
         
 
         <div class="post-meta">
@@ -288,6 +292,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -321,7 +347,25 @@
       
 
       
-        
+        <h3 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h3><p>从远程仓库clone到本地的hexo博客无法启动，提示“WARN：NO layout：index”</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>hexo博客的next主题不能更新到远程仓库（github），远程仓库的主题文件夹为空。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h3 id="一：重新clone一个新的next主题到本地"><a href="#一：重新clone一个新的next主题到本地" class="headerlink" title="一：重新clone一个新的next主题到本地"></a>一：重新clone一个新的next主题到本地</h3><p>弊端：每次都要这么做，如果你的主题有自定义，那么每次都要更新配置文件，因为重新clone下来的主题是初始的。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/Hexo-Blog.git</span><br><span class="line"><span class="meta">$</span> cd Hexo-Blog</span><br><span class="line"><span class="meta">$</span> npm install</span><br><span class="line"><span class="meta">$</span> rm -rf themes/next/</span><br><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/hexo-theme-next.git themes/next</span><br><span class="line"><span class="meta">$</span> hexo g</span><br><span class="line"><span class="meta">$</span> hexo s</span><br></pre></td></tr></table></figure>
+<p>更改主题配置，加上自定义配置，刷新。</p>
+<h3 id="二：使用git-submodules管理子模块"><a href="#二：使用git-submodules管理子模块" class="headerlink" title="二：使用git submodules管理子模块"></a>二：使用git submodules管理子模块</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/Hexo-Blog.git</span><br><span class="line"><span class="meta">$</span> cd Hexo-Blog</span><br><span class="line"><span class="meta">$</span> npm install</span><br><span class="line"><span class="meta">$</span> rm -rf themes/next/</span><br><span class="line"><span class="meta">$</span> git submodule add https://github.com/Evey-huang/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+<h4 id="Q1"><a href="#Q1" class="headerlink" title="Q1:"></a>Q1:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;themes/next&apos; already exists in the index</span><br></pre></td></tr></table></figure>
+<h5 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git rm -r --cached themes/next</span><br></pre></td></tr></table></figure>
+<p>然后再次执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git submodule add https://github.com/Evey-huang/hexo-theme-next.git themes/next</span><br><span class="line"><span class="meta">$</span> hexo g</span><br><span class="line"><span class="meta">$</span> hexo s</span><br></pre></td></tr></table></figure>
+<p>更改主题配置，加上自定义配置，刷新</p>
+<p>修改.git/config</p>
+<p>修改.git/module/themes/next/config</p>
+<p>在themes/next提交配置到Github</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git add .</span><br><span class="line"><span class="meta">$</span> git commit -m "update"</span><br><span class="line"><span class="meta">$</span> git push origin master</span><br></pre></td></tr></table></figure>
+<p>在另一台电脑上</p>
+<p>执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/Evey-huang/Blog.git</span><br><span class="line"><span class="meta">$</span> cd Blog</span><br><span class="line"><span class="meta">$</span> git submodule update --init</span><br><span class="line"><span class="meta">$</span> cd themes/next</span><br><span class="line"><span class="meta">$</span> git pull origin master</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -335,6 +379,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+            <a href="/tags/submodule/" rel="tag"># submodule</a>
+          
+        </div>
       
 
       
@@ -414,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -445,7 +506,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -456,7 +517,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -501,6 +562,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#现象"><span class="nav-number">1.</span> <span class="nav-text">现象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一：重新clone一个新的next主题到本地"><span class="nav-number">4.</span> <span class="nav-text">一：重新clone一个新的next主题到本地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二：使用git-submodules管理子模块"><span class="nav-number">5.</span> <span class="nav-text">二：使用git submodules管理子模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Q1"><span class="nav-number">5.1.</span> <span class="nav-text">Q1:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案："><span class="nav-number">5.1.1.</span> <span class="nav-text">解决方案：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
