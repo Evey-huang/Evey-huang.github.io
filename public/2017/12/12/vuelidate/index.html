@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="validate 表单验证插件," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="VuelidateVuelidate是一款简单轻量级的基于模块的Vue.js验证插件。当前最新的版本是0.6.1,详情可以戳链接看官方文档（https://monterail.github.io/vuelidate/）或者前往github（https://github.com/monterail/vuelidate）。接触Vuelidate源于工作的需求，当时需要做表单验证然后师傅甩给我一个链接让">
+<meta name="keywords" content="validate 表单验证插件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vuelidate表单验证插件">
+<meta property="og:url" content="http://yoursite.com/2017/12/12/vuelidate/index.html">
+<meta property="og:site_name" content="EveyWong">
+<meta property="og:description" content="VuelidateVuelidate是一款简单轻量级的基于模块的Vue.js验证插件。当前最新的版本是0.6.1,详情可以戳链接看官方文档（https://monterail.github.io/vuelidate/）或者前往github（https://github.com/monterail/vuelidate）。接触Vuelidate源于工作的需求，当时需要做表单验证然后师傅甩给我一个链接让">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://eveywongblog.files.wordpress.com/2017/11/e98089e58cba_012.png">
+<meta property="og:updated_time" content="2018-06-28T03:14:54.739Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vuelidate表单验证插件">
+<meta name="twitter:description" content="VuelidateVuelidate是一款简单轻量级的基于模块的Vue.js验证插件。当前最新的版本是0.6.1,详情可以戳链接看官方文档（https://monterail.github.io/vuelidate/）或者前往github（https://github.com/monterail/vuelidate）。接触Vuelidate源于工作的需求，当时需要做表单验证然后师傅甩给我一个链接让">
+<meta name="twitter:image" content="https://eveywongblog.files.wordpress.com/2017/11/e98089e58cba_012.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/12/vuelidate/"/>
+
+
+
+
+
+  <title>Vuelidate表单验证插件 | EveyWong</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EveyWong</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Being a girl is fun.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/12/vuelidate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eveywong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EveyWong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vuelidate表单验证插件</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T22:14:10+08:00">
+                2017-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/validate/" itemprop="url" rel="index">
+                    <span itemprop="name">validate</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 阅读
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Vuelidate"><a href="#Vuelidate" class="headerlink" title="Vuelidate"></a>Vuelidate</h1><p>Vuelidate是一款简单轻量级的基于模块的Vue.js验证插件。当前最新的版本是0.6.1,详情可以戳链接看官方文档（<a href="https://monterail.github.io/vuelidate/" target="_blank" rel="noopener">https://monterail.github.io/vuelidate/</a>）或者前往github（<a href="https://github.com/monterail/vuelidate" target="_blank" rel="noopener">https://github.com/monterail/vuelidate</a>）。接触Vuelidate源于工作的需求，当时需要做表单验证然后师傅甩给我一个链接让我去学习。学习以后发现这是真的好用，它有以下功能特征：</p>
+<ul>
+<li>基于模型</li>
+<li>脱离模型</li>
+<li>依赖自由，简约的库</li>
+<li>支持收集验证</li>
+<li>支持嵌套模型</li>
+<li>上下文验证</li>
+<li>自定义验证，便于使用</li>
+<li>支持功能组合</li>
+<li>验证了不同数据源：Vuex getter，计算值，等等。</li>
+</ul>
+<p>在接触Vuelidate之前还用过另一个表单验证插件veelidate(<a href="http://vee-validate.logaretm.com/index.html#" target="_blank" rel="noopener">http://vee-validate.logaretm.com/index.html#</a>)用法跟Vuelidate差不多，但是Vuelidate更深得我心。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装很简单，用npm来安装只需要一句话：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vuelidate --save</span><br></pre></td></tr></table></figure>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3><p>在main.js中导入库并用作Vue插件，以便在包含验证配置的所有组件上全局启用该功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Vuelidate from &apos;vuelidate&apos;</span><br><span class="line">Vue.use(Vuelidate)</span><br></pre></td></tr></table></figure>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><h4 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import &#123; required, maxLength &#125; from &apos;vuelidate/lib/validators&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      username: &apos;&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  validations: &#123;</span><br><span class="line">    username: &#123;</span><br><span class="line">      required,</span><br><span class="line">      minLength: minLength(6)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><p><img src="https://eveywongblog.files.wordpress.com/2017/11/e98089e58cba_012.png" alt="选区_012"></p>
+<h2 id="内置验证规则"><a href="#内置验证规则" class="headerlink" title="内置验证规则"></a>内置验证规则</h2><ul>
+<li>required: 需要非空数据。检查仅包含空格的空数组和字符串。</li>
+<li>maxLength:要求输入具有最大指定长度（包括最大值）。适用于数组。</li>
+<li>minLength:要求输入具有最小指定长度（包括最小值）。适用于数组。</li>
+<li>email: 接受有效的电子邮件地址。请记住，您仍然需要在服务器上进行仔细验证，因为无法发送验证电子邮件地址是否是真实的。</li>
+<li>between: 检查数字或日期是否在指定范围内。最小值和最大值都包括在内。</li>
+<li>ipAddress: 接受点分十进制表示形式的有效IPv4地址，如127.0.0.1。</li>
+<li>alpha: 只接受字母字符。</li>
+<li>alphaNum: 只接受字母数字。</li>
+<li>numeric: 只接受数字。</li>
+<li>sameAs: 检查给定属性是否相等。</li>
+<li>url: 只接受网址。</li>
+<li>or: 当至少有一个提供的验证器通过时通过。</li>
+<li>and: 所有提供的验证器都通过时通过。</li>
+<li>requiredIf: 仅当提供的属性或谓词为真时才需要非空数据。</li>
+<li>requiredUnless: 仅当提供的属性或谓词为假时才需要非空数据。</li>
+<li>minValue: 要求输入具有指定的最小数值或日期。</li>
+<li>maxValue: 要求输入具有指定的最大数值或日期。</li>
+</ul>
+<h2 id="自定义验证规则"><a href="#自定义验证规则" class="headerlink" title="自定义验证规则"></a>自定义验证规则</h2><p>除了使用Vuelidate自带的内置验证规则外还可以使用自定义规则满足需求。只需要再新建一个js文件加入自己的验证规则就可以了。</p>
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><p>新建一个自定义验证规则name.js代码如图所示，基本可以参照内置验证规则写，要注意路径写正确。</p>
+<h6 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(exports, &apos;__esModule&apos;, &#123;</span><br><span class="line">  value: true</span><br><span class="line">&#125;)</span><br><span class="line">exports.name  = undefined</span><br><span class="line"></span><br><span class="line">var _name = require(&apos;./name&apos;)</span><br><span class="line"></span><br><span class="line">var _name2 = _interopRequireDefault(_name)</span><br><span class="line"></span><br><span class="line">function _interopRequireDefault (obj) &#123; return obj &amp;&amp; obj.__esModule ? obj : &#123; default: obj &#125; &#125;</span><br><span class="line"></span><br><span class="line">exports.name = _name2.default</span><br></pre></td></tr></table></figure>
+<h6 id="name-js"><a href="#name-js" class="headerlink" title="name.js"></a>name.js</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(exports, &apos;__esModule&apos;, &#123;</span><br><span class="line">  value: true</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">var _common = require(&apos;vuelidate/lib/validators/common&apos;)</span><br><span class="line"></span><br><span class="line">var nameRegex = /^[\w-]+$/</span><br><span class="line"></span><br><span class="line">exports.default = (0, _common.regex)(&apos;name&apos;, nameRegex)</span><br></pre></td></tr></table></figure>
+<p>当这些设置好以后就可以像内置规则那样使用了，这里我是在utils下新建了vuelidate验证规则，所以路径可以这么写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123; name &#125; from &apos;utils/vuelidate/lib/validators&apos;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/validate-表单验证插件/" rel="tag"># validate 表单验证插件</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/12/regexp1/" rel="next" title="RegExp正则表达式基本使用">
+                <i class="fa fa-chevron-left"></i> RegExp正则表达式基本使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/14/cailan/" rel="prev" title="《老了依然可以谈未来》读后感">
+                《老了依然可以谈未来》读后感 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjI1NC84ODE4"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="Eveywong" />
+            
+              <p class="site-author-name" itemprop="name">Eveywong</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Evey-huang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:evey_wong@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/yourname" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vuelidate"><span class="nav-number">1.</span> <span class="nav-text">Vuelidate</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#main-js"><span class="nav-number">3.0.1.</span> <span class="nav-text">main.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">3.0.2.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JS"><span class="nav-number">3.0.2.1.</span> <span class="nav-text">JS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML"><span class="nav-number">3.0.2.2.</span> <span class="nav-text">HTML</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内置验证规则"><span class="nav-number">3.1.</span> <span class="nav-text">内置验证规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义验证规则"><span class="nav-number">3.2.</span> <span class="nav-text">自定义验证规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Example-1"><span class="nav-number">3.2.0.1.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#index-js"><span class="nav-number">3.2.0.1.0.1.</span> <span class="nav-text">index.js</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#name-js"><span class="nav-number">3.2.0.1.0.2.</span> <span class="nav-text">name.js</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eveywong</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
