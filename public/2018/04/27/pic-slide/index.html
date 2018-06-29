@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,动画," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="背景最近看到ISUX网站动画做的很好看，于是想着能不能实现。现在实现的是图片从左到右加载动画和hover时图片放大。 实现由于我真的录不好屏幕所以没有po出gif图，只能丢链接，想看效果的戳这里 HTML 123&amp;lt;div class=&quot;pic-showclip-test&quot;&amp;gt;  &amp;lt;div class=&quot;pic-showclip&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt">
+<meta name="keywords" content="css,动画">
+<meta property="og:type" content="article">
+<meta property="og:title" content="仿ISUX网站动画之图片从左到右加载动画">
+<meta property="og:url" content="http://yoursite.com/2018/04/27/pic-slide/index.html">
+<meta property="og:site_name" content="EveyWong">
+<meta property="og:description" content="背景最近看到ISUX网站动画做的很好看，于是想着能不能实现。现在实现的是图片从左到右加载动画和hover时图片放大。 实现由于我真的录不好屏幕所以没有po出gif图，只能丢链接，想看效果的戳这里 HTML 123&amp;lt;div class=&quot;pic-showclip-test&quot;&amp;gt;  &amp;lt;div class=&quot;pic-showclip&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-28T03:14:54.739Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="仿ISUX网站动画之图片从左到右加载动画">
+<meta name="twitter:description" content="背景最近看到ISUX网站动画做的很好看，于是想着能不能实现。现在实现的是图片从左到右加载动画和hover时图片放大。 实现由于我真的录不好屏幕所以没有po出gif图，只能丢链接，想看效果的戳这里 HTML 123&amp;lt;div class=&quot;pic-showclip-test&quot;&amp;gt;  &amp;lt;div class=&quot;pic-showclip&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/27/pic-slide/"/>
+
+
+
+
+
+  <title>仿ISUX网站动画之图片从左到右加载动画 | EveyWong</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EveyWong</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Being a girl is fun.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/pic-slide/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eveywong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EveyWong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">仿ISUX网站动画之图片从左到右加载动画</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T15:51:59+08:00">
+                2018-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 阅读
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>最近看到<a href="https://isux.tencent.com/" target="_blank" rel="noopener">ISUX</a>网站动画做的很好看，于是想着能不能实现。现在实现的是图片从左到右加载动画和hover时图片放大。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>由于我真的录不好屏幕所以没有po出gif图，只能丢链接，想看效果的<a href="https://codepen.io/evey-huang/pen/rvWxeL" target="_blank" rel="noopener">戳这里</a></p>
+<p><strong>HTML</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pic-showclip-test"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pic-showclip"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CSS(SCSS)</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> pic-showclip(<span class="variable">$url</span>, <span class="variable">$width</span>: 100vw, <span class="variable">$height</span>: 100vh, <span class="variable">$time</span>: 0.8s, <span class="variable">$hover-time</span>: 0.5s) &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="variable">$height</span> / <span class="variable">$width</span> * <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">animation</span>: pic-showclip-showup-#&#123;<span class="variable">$width</span>&#125; #&#123;<span class="variable">$time</span>&#125; forwards ease-out;</span><br><span class="line">  @keyframes pic-showclip-showup-#&#123;<span class="variable">$width</span>&#125; &#123;</span><br><span class="line">    0%&#123;</span><br><span class="line">      <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">20px</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    100%&#123;</span><br><span class="line">      <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">      <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  &amp;::before &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">' '</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background-image</span>: url(<span class="variable">$url</span>);</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>: center center;</span><br><span class="line">    <span class="attribute">background-size</span>: cover;</span><br><span class="line">    <span class="attribute">animation</span>: pic-showclip-showclip-#&#123;<span class="variable">$width</span>&#125; #&#123;<span class="variable">$time</span>&#125; forwards cubic-bezier(<span class="number">0</span>, <span class="number">0.3</span>, <span class="number">0.7</span>, <span class="number">1</span>);</span><br><span class="line">    @keyframes pic-showclip-showclip-#&#123;<span class="variable">$width</span>&#125; &#123;</span><br><span class="line">      0%&#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">clip</span>: rect(<span class="number">0</span>, <span class="number">0</span>, <span class="variable">$height</span>, <span class="number">0</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      100%&#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">        <span class="attribute">clip</span>: rect(<span class="number">0</span>, <span class="variable">$width</span>, <span class="variable">$height</span>, <span class="number">0</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">transform</span>: scale(<span class="number">1</span>);</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="variable">$hover-time</span> ease;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// hover图片放大 </span></span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    &amp;::before &#123;</span><br><span class="line">      <span class="attribute">transform</span>: scale(<span class="number">1.05</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">  <span class="selector-class">.pic-showclip-test</span> &#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">1260px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    <span class="selector-class">.pic-showclip</span> &#123;</span><br><span class="line">      @<span class="keyword">include</span> pic-showclip(<span class="string">'http://p1cjg886l.bkt.clouddn.com/brands-1.jpg'</span>, 1260px, 606px, 0.8s);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>这里封装了一个动画函数名为<code>pic-showclip</code>，里面创建了一个动画名为<code>pic-showclip-showup-#{$width}</code>。</p>
+<h3 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h3><p>animation常用动画属性有：</p>
+<blockquote>
+<ul>
+<li>animation-name: 规定需要绑定到选择器的 keyframe 名称。</li>
+<li>animation-duration: 规定完成动画所花费的时间，以秒或毫秒计。</li>
+<li>animation-timing-function：规定动画的速度曲线。</li>
+<li>animation-delay：规定在动画开始之前的延迟。</li>
+<li>animation-iteration-count：规定动画应该播放的次数。</li>
+<li>animation-direction：规定是否应该轮流反向播放动画。</li>
+<li>animation-fill-mode：规定动画在播放之前或之后，其动画效果是否可见。</li>
+</ul>
+</blockquote>
+<h4 id="animation-timing-function"><a href="#animation-timing-function" class="headerlink" title="animation-timing-function"></a>animation-timing-function</h4><p><code>animation-timing-function</code>使用名为三次贝塞尔（Cubic Bezier）函数的数学函数。贝塞尔曲线通过控制曲线上的四个点（起始点、终止点以及两个相互分离的中间点）来创造、编辑图形，绘制出一条光滑曲线并以曲线的状态来反映动画过程中速度的变化。 </p>
+<p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-timing-function</span>: <span class="selector-tag">value</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中value可取：</p>
+<ul>
+<li>linear：动画从头到尾的速度是相同的。</li>
+<li>ease：默认。动画以低速开始，然后加快，在结束前变慢。</li>
+<li>ease-in：动画以低速开始。</li>
+<li>ease-out：动画以低速结束。</li>
+<li>ease-in-out：动画以低速开始和结束。</li>
+<li>cubic-bezier(<em>x1</em>,<em>y1</em>,<em>x2</em>,<em>y2</em>)：在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。</li>
+</ul>
+</blockquote>
+<p>以上几种预设速度<code>linear</code>、<code>ease-in</code>、<code>ease-out</code>、<code>ease-in-out</code>均可写成<code>cubic-bezier</code>格式：</p>
+<ul>
+<li><strong>linear</strong>对应自定义cubic-bezier(0,0,1,1)，效果为匀速直线； </li>
+<li><strong>ease</strong> 对应自定义cubic-bezier(.25,.01,.25,1),效果为先慢后快再慢；</li>
+<li><strong>ease-in</strong>   对应自定义cubic-bezier(.42,0,1,1),效果为先慢后快； </li>
+<li><strong>ease-out</strong>   对应自定义cubic-bezier(0,0,.58,1),效果为先快后慢； </li>
+<li><strong>ease-in-out</strong>   对应自定义cubic-bezier(.42,0,.58,1),效果为先慢后快再慢。 </li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">animation</span>: pic-showclip-showclip-#&#123;<span class="variable">$width</span>&#125; #&#123;<span class="variable">$time</span>&#125; forwards cubic-bezier(<span class="number">0</span>, <span class="number">0.3</span>, <span class="number">0.7</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p><code>cubic-bezier(0, 0.3, 0.7, 1);</code>反映的效果是慢慢变快，平滑过渡</p>
+<h4 id="animation-fill-mode"><a href="#animation-fill-mode" class="headerlink" title="animation-fill-mode"></a>animation-fill-mode</h4><p><code>animation-fill-mode</code>规定动画在播放之前或之后，其动画效果是否可见。</p>
+<p>语法是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">animation-fill-mode : none | forwards | backwards | both;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>none: 不改变默认行为。</li>
+<li>forwards: 当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。</li>
+<li>backwards: 在 animation-delay 所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）。</li>
+<li>both: 向前和向后填充模式都被应用。</li>
+</ul>
+</blockquote>
+<h3 id="clip"><a href="#clip" class="headerlink" title="clip"></a>clip</h3><p>clip属性的语法是这样定义的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip: &lt;shape&gt; | auto</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>！！！<strong>clip 属性仅在设置了 position: absolute | fixed 的元素上生效且<code>&lt;shape&gt;</code> 仅接受 <code>rect()</code> 矩形裁切</strong>。</p>
+<p><code>rect()</code> 接受四个值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip: rect(&lt;top&gt;, &lt;right&gt;, &lt;bottom&gt;, &lt;left&gt;)</span><br></pre></td></tr></table></figure>
+<p>其中<code>&lt;top&gt;</code> 和 <code>&lt;bottom&gt;</code> 指定相对于盒子上边框边界的偏移，<code>&lt;right&gt;</code> 和 <code>&lt;left&gt;</code> 指定了相对于盒子左边框边界的偏移。即可以把 <code>&lt;top&gt;</code> 和 <code>&lt;bottom&gt;</code> 想象成 Photoshop 中的水平参考线，<code>&lt;right&gt;</code> 和 <code>&lt;left&gt;</code> 是垂直参考线，而剪裁区域就是它们所围成的矩形区域。</p>
+<p><strong>当 bottom &lt;= top 或者 right &lt;= left 时，裁切区域不显示</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@keyframes pic-showclip-showclip-#&#123;<span class="variable">$width</span>&#125; &#123;</span><br><span class="line">    0%&#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">clip</span>: rect(<span class="number">0</span>, <span class="number">0</span>, <span class="variable">$height</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    100%&#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">        <span class="attribute">clip</span>: rect(<span class="number">0</span>, <span class="variable">$width</span>, <span class="variable">$height</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><u>这段代码实现的功能就是先把一部分图片隐藏，然后平滑显示。</u></strong></p>
+<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><p><code>scale</code>属性的语法为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform: scale(&lt;x&gt; [&lt;y&gt;])</span><br></pre></td></tr></table></figure>
+<p>通过scale()，根据给定的宽度（X 轴）和高度（Y 轴）参数，元素的尺寸会增加或减少。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&amp;:hover &#123;</span><br><span class="line">    &amp;::before &#123;</span><br><span class="line">        <span class="attribute">transform</span>: scale(<span class="number">1.05</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><u>这段代码实现的功能是当图片hover时，图片放大1.05倍</u></strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+            <a href="/tags/动画/" rel="tag"># 动画</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/25/center/" rel="next" title="css实现居中">
+                <i class="fa fa-chevron-left"></i> css实现居中
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/28/ubuntu1/" rel="prev" title="Ubuntu安装和配置git">
+                Ubuntu安装和配置git <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjI1NC84ODE4"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="Eveywong" />
+            
+              <p class="site-author-name" itemprop="name">Eveywong</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Evey-huang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:evey_wong@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/yourname" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">3.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#animation"><span class="nav-number">3.1.</span> <span class="nav-text">animation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#animation-timing-function"><span class="nav-number">3.1.1.</span> <span class="nav-text">animation-timing-function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#animation-fill-mode"><span class="nav-number">3.1.2.</span> <span class="nav-text">animation-fill-mode</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clip"><span class="nav-number">3.2.</span> <span class="nav-text">clip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform"><span class="nav-number">3.3.</span> <span class="nav-text">transform</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eveywong</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
