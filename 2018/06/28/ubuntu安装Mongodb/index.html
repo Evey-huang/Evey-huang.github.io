@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ubuntu16.04,ubuntu18.04,mongodb," />
+  <meta name="keywords" content="ubuntu18.04,ubuntu16.04,MacOSX,mongodb," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Ubuntu16.04自动安装mongodb 导入包管理系统使用的公钥  1sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5  为mongodb创建一个列表文件  1echo &quot;deb [ arch=amd64,arm64 ] http">
-<meta name="keywords" content="ubuntu16.04,ubuntu18.04,mongodb">
+<meta name="description" content="Mac OSX安装mongodb 安装mongodb  1brew install mongodb  启动mongodb  1mongod --config /usr/local/etc/mongod.conf  连接到mongo  1mongo Ubuntu16.04自动安装mongodb 导入包管理系统使用的公钥  1sudo apt-key adv --keyserver hkp://key">
+<meta name="keywords" content="ubuntu18.04,ubuntu16.04,MacOSX,mongodb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu安装Mongodb">
+<meta property="og:title" content="ubuntu&#x2F;Mac OSX安装Mongodb">
 <meta property="og:url" content="http://yoursite.com/2018/06/28/ubuntu安装Mongodb/index.html">
 <meta property="og:site_name" content="EveyWong">
-<meta property="og:description" content="Ubuntu16.04自动安装mongodb 导入包管理系统使用的公钥  1sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5  为mongodb创建一个列表文件  1echo &quot;deb [ arch=amd64,arm64 ] http">
+<meta property="og:description" content="Mac OSX安装mongodb 安装mongodb  1brew install mongodb  启动mongodb  1mongod --config /usr/local/etc/mongod.conf  连接到mongo  1mongo Ubuntu16.04自动安装mongodb 导入包管理系统使用的公钥  1sudo apt-key adv --keyserver hkp://key">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-28T03:56:40.872Z">
+<meta property="og:updated_time" content="2018-08-17T09:02:56.288Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu安装Mongodb">
-<meta name="twitter:description" content="Ubuntu16.04自动安装mongodb 导入包管理系统使用的公钥  1sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5  为mongodb创建一个列表文件  1echo &quot;deb [ arch=amd64,arm64 ] http">
+<meta name="twitter:title" content="ubuntu&#x2F;Mac OSX安装Mongodb">
+<meta name="twitter:description" content="Mac OSX安装mongodb 安装mongodb  1brew install mongodb  启动mongodb  1mongod --config /usr/local/etc/mongod.conf  连接到mongo  1mongo Ubuntu16.04自动安装mongodb 导入包管理系统使用的公钥  1sudo apt-key adv --keyserver hkp://key">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>ubuntu安装Mongodb | EveyWong</title>
+  <title>ubuntu/Mac OSX安装Mongodb | EveyWong</title>
   
 
 
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ubuntu安装Mongodb</h1>
+          <h1 class="post-title" itemprop="name headline">ubuntu/Mac OSX安装Mongodb</h1>
         
 
         <div class="post-meta">
@@ -347,7 +347,19 @@
       
 
       
-        <h2 id="Ubuntu16-04自动安装mongodb"><a href="#Ubuntu16-04自动安装mongodb" class="headerlink" title="Ubuntu16.04自动安装mongodb"></a>Ubuntu16.04自动安装mongodb</h2><ul>
+        <h2 id="Mac-OSX安装mongodb"><a href="#Mac-OSX安装mongodb" class="headerlink" title="Mac OSX安装mongodb"></a>Mac OSX安装mongodb</h2><ul>
+<li>安装mongodb</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mongodb</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动mongodb</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --config /usr/local/etc/mongod.conf</span><br></pre></td></tr></table></figure>
+<ul>
+<li>连接到mongo</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
+<h2 id="Ubuntu16-04自动安装mongodb"><a href="#Ubuntu16-04自动安装mongodb" class="headerlink" title="Ubuntu16.04自动安装mongodb"></a>Ubuntu16.04自动安装mongodb</h2><ul>
 <li>导入包管理系统使用的公钥</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5</span><br></pre></td></tr></table></figure>
@@ -472,9 +484,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/ubuntu18-04/" rel="tag"># ubuntu18.04</a>
+          
             <a href="/tags/ubuntu16-04/" rel="tag"># ubuntu16.04</a>
           
-            <a href="/tags/ubuntu18-04/" rel="tag"># ubuntu18.04</a>
+            <a href="/tags/MacOSX/" rel="tag"># MacOSX</a>
           
             <a href="/tags/mongodb/" rel="tag"># mongodb</a>
           
@@ -587,7 +601,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -609,7 +623,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -664,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu16-04自动安装mongodb"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu16.04自动安装mongodb</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他操作"><span class="nav-number">1.1.</span> <span class="nav-text">其他操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载Mongodb"><span class="nav-number">1.2.</span> <span class="nav-text">卸载Mongodb</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu18-04手动安装mongodb"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu18.04手动安装mongodb</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他操作-1"><span class="nav-number">2.1.</span> <span class="nav-text">其他操作</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac-OSX安装mongodb"><span class="nav-number">1.</span> <span class="nav-text">Mac OSX安装mongodb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu16-04自动安装mongodb"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu16.04自动安装mongodb</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他操作"><span class="nav-number">2.1.</span> <span class="nav-text">其他操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载Mongodb"><span class="nav-number">2.2.</span> <span class="nav-text">卸载Mongodb</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu18-04手动安装mongodb"><span class="nav-number">3.</span> <span class="nav-text">Ubuntu18.04手动安装mongodb</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他操作-1"><span class="nav-number">3.1.</span> <span class="nav-text">其他操作</span></a></li></ol></li></ol></div>
             
 
           </div>

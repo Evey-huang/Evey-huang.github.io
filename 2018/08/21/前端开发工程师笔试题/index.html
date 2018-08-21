@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,js,html,面试," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.标签上title和alt属性的区别是什么？ 含义不同  alt属性在无法加载显示图片时代替文字，title属性则是为设置该属性的元素提供建议性的信息  在浏览器中表现不同  在FireFox和IE8中，当鼠标经过图片时title的值会显示，而alt的值不会显示，只有在IE6中，当鼠标经过图片时title和alt的值都会显示。  网站SEO优化不同  搜索引擎对图片意思的判断主要靠alt属性，所">
+<meta name="keywords" content="css,js,html,面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发工程师笔试题">
+<meta property="og:url" content="http://yoursite.com/2018/08/21/前端开发工程师笔试题/index.html">
+<meta property="og:site_name" content="EveyWong">
+<meta property="og:description" content="1.标签上title和alt属性的区别是什么？ 含义不同  alt属性在无法加载显示图片时代替文字，title属性则是为设置该属性的元素提供建议性的信息  在浏览器中表现不同  在FireFox和IE8中，当鼠标经过图片时title的值会显示，而alt的值不会显示，只有在IE6中，当鼠标经过图片时title和alt的值都会显示。  网站SEO优化不同  搜索引擎对图片意思的判断主要靠alt属性，所">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/home/evey/%E5%9B%BE%E7%89%87/2018-06-13%2018-44-36%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
+<meta property="og:updated_time" content="2018-08-21T02:54:14.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发工程师笔试题">
+<meta name="twitter:description" content="1.标签上title和alt属性的区别是什么？ 含义不同  alt属性在无法加载显示图片时代替文字，title属性则是为设置该属性的元素提供建议性的信息  在浏览器中表现不同  在FireFox和IE8中，当鼠标经过图片时title的值会显示，而alt的值不会显示，只有在IE6中，当鼠标经过图片时title和alt的值都会显示。  网站SEO优化不同  搜索引擎对图片意思的判断主要靠alt属性，所">
+<meta name="twitter:image" content="http://yoursite.com/home/evey/%E5%9B%BE%E7%89%87/2018-06-13%2018-44-36%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/21/前端开发工程师笔试题/"/>
+
+
+
+
+
+  <title>前端开发工程师笔试题 | EveyWong</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EveyWong</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Being a girl is fun.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/前端开发工程师笔试题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eveywong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EveyWong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端开发工程师笔试题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T10:52:46+08:00">
+                2018-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 阅读
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-标签上title和alt属性的区别是什么？"><a href="#1-标签上title和alt属性的区别是什么？" class="headerlink" title="1.标签上title和alt属性的区别是什么？"></a>1.标签上title和alt属性的区别是什么？</h2><ul>
+<li>含义不同</li>
+</ul>
+<p>alt属性在无法加载显示图片时代替文字，title属性则是为设置该属性的元素提供建议性的信息</p>
+<ul>
+<li>在浏览器中表现不同</li>
+</ul>
+<p>在FireFox和IE8中，当鼠标经过图片时title的值会显示，而alt的值不会显示，只有在IE6中，当鼠标经过图片时title和alt的值都会显示。</p>
+<ul>
+<li>网站SEO优化不同</li>
+</ul>
+<p>搜索引擎对图片意思的判断主要靠alt属性，所以在图片alt属性中以简要文字说明，同时包含关键词，也是页面优化的一部分。</p>
+<h2 id="2-relative、absolute、static、fixed的作用，相对谁定位？"><a href="#2-relative、absolute、static、fixed的作用，相对谁定位？" class="headerlink" title="2.relative、absolute、static、fixed的作用，相对谁定位？"></a>2.relative、absolute、static、fixed的作用，相对谁定位？</h2><ul>
+<li>static是默认值，任意<code>position:static</code>的元素不会被特殊的定位。</li>
+<li>fixed是固定定位，元素会相对于<code>视窗（body）</code>来定位，这意味着即便页面滚动，它还是会停留在相同的位置，<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>属性都可以用。</li>
+<li>relative是相对定位，相对于<code>父元素</code>来定位，不脱离文档流</li>
+<li>absolute是绝对定位，相对于<code>最近的positioned祖先元素</code>定位，如果绝对定位的元素没有positioned祖先元素则它相对于<code>body</code>元素定位，并且它会随着页面滚动而移动。</li>
+</ul>
+<blockquote>
+<p><code>positioned</code>元素是指position值不是static的元素</p>
+</blockquote>
+<h2 id="3-请画出css盒模型。"><a href="#3-请画出css盒模型。" class="headerlink" title="3.请画出css盒模型。"></a>3.请画出css盒模型。</h2><p><img src="/home/evey/%E5%9B%BE%E7%89%87/2018-06-13%2018-44-36%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt=""></p>
+<h2 id="4-请写一个数组去重的方法。"><a href="#4-请写一个数组去重的方法。" class="headerlink" title="4.请写一个数组去重的方法。"></a>4.请写一个数组去重的方法。</h2><h4 id="方法1——Set"><a href="#方法1——Set" class="headerlink" title="方法1——Set"></a>方法1——Set</h4><p>ES6提供了新的数据结构<code>Set</code>。它类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+<p><code>Set</code>本身是一个构造函数，用来生成<code>Set</code>数据结构，<code>Array.from</code>方法可以将<code>Set</code>结构转为数组</p>
+<blockquote>
+<p>在<code>Set</code>内部两个<code>NaN</code>是相等的，两个对象是总不相等的</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>];</span><br><span class="line"><span class="built_in">console</span>.log(unique(arr)); <span class="comment">// [1, 2, 3, null, NaN]</span></span><br></pre></td></tr></table></figure>
+<h4 id="方法2——forEach"><a href="#方法2——forEach" class="headerlink" title="方法2——forEach"></a>方法2——forEach</h4><p>在<code>forEach</code>中两个<code>NaN</code>不相等</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> newArr = [];</span><br><span class="line">  arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(newArr.indexOf(item) === <span class="number">-1</span>)&#123;</span><br><span class="line">      newArr.push(item);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>];</span><br><span class="line"><span class="built_in">console</span>.log(unique(arr)); <span class="comment">// [1, 2, 3, null, NaN, NaN]</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-请写一个方法，将URL中的查询字符串解析成一个字典对象。"><a href="#5-请写一个方法，将URL中的查询字符串解析成一个字典对象。" class="headerlink" title="5.请写一个方法，将URL中的查询字符串解析成一个字典对象。"></a>5.请写一个方法，将URL中的查询字符串解析成一个字典对象。</h2><h6 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getQueryObject</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    url = url == <span class="literal">null</span> ? <span class="built_in">window</span>.location.href : url;</span><br><span class="line">    <span class="keyword">var</span> search = url.substring(url.lastIndexOf(<span class="string">"?"</span>) + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> reg = <span class="regexp">/([^?&amp;=]+)=([^?&amp;=]*)/g</span>;</span><br><span class="line">    search.replace(reg, <span class="function"><span class="keyword">function</span> (<span class="params">rs, $<span class="number">1</span>, $<span class="number">2</span></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> name = <span class="built_in">decodeURIComponent</span>($<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">var</span> val = <span class="built_in">decodeURIComponent</span>($<span class="number">2</span>);               </span><br><span class="line">        val = <span class="built_in">String</span>(val);</span><br><span class="line">        obj[name] = val;</span><br><span class="line">        <span class="keyword">return</span> rs;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"http://www.cnblogs.com/leee/p/4456840.html?name=1&amp;dd=ddd**"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(getQueryObject(url));</span><br></pre></td></tr></table></figure>
+<h6 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[object <span class="built_in">Object</span>] &#123;</span><br><span class="line">  dd: <span class="string">"ddd**"</span>,</span><br><span class="line">  name: <span class="string">"1"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-一个页面从输入URL到页面加载完的过程中都发生了什么事情？"><a href="#6-一个页面从输入URL到页面加载完的过程中都发生了什么事情？" class="headerlink" title="6.一个页面从输入URL到页面加载完的过程中都发生了什么事情？"></a>6.一个页面从输入URL到页面加载完的过程中都发生了什么事情？</h2><ol>
+<li>用户输入URL地址</li>
+<li>浏览器解析URL解析出主机名</li>
+<li>浏览器将主机名换成服务器IP地址（浏览器先查找本地DNS缓存列表，没有的话再向浏览器默认的DNS服务器发送查询请求，同时缓存）</li>
+<li>浏览器将端口号从URL中解析出来</li>
+<li>浏览器建立一条与目标Web服务器的TCP连接（三次握手）</li>
+<li>浏览器向服务器发送一条HTTP请求报文</li>
+<li>服务器向浏览器返回一条HTTP响应报文</li>
+<li>关闭连接，浏览器解析文档</li>
+<li>如果文档中有资源，重复6、7、8直至资源全部加载完毕</li>
+</ol>
+<h2 id="7-请简述页面渲染的过程。"><a href="#7-请简述页面渲染的过程。" class="headerlink" title="7.请简述页面渲染的过程。"></a>7.请简述页面渲染的过程。</h2><ol>
+<li>处理HTML标记并构建DOM树</li>
+<li>处理CSS标记并构建CSS DOM树</li>
+<li>将DOM与CSS DOM合并成一个渲染树</li>
+<li>根据渲染来布局，以计算每个节点的几何信息</li>
+<li>将各个节点绘制到屏幕上</li>
+</ol>
+<h2 id="9-判断一个字符串中出现次数最多的-字符，并统计这个次数。"><a href="#9-判断一个字符串中出现次数最多的-字符，并统计这个次数。" class="headerlink" title="9.判断一个字符串中出现次数最多的 字符，并统计这个次数。"></a>9.判断一个字符串中出现次数最多的 字符，并统计这个次数。</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"abcabcaaa"</span>;</span><br><span class="line">maxnum(str);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">maxnum</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> json = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!json[str.charAt(i)])&#123;</span><br><span class="line">            json[str.charAt(i)] = <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            json[str.charAt(i)]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(json);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> Index = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> json)&#123;</span><br><span class="line">        <span class="keyword">if</span>(json[i]&gt;max)&#123;</span><br><span class="line">            max = json[i];</span><br><span class="line">            Index = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(max + Index);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="10-请问web前端开发，如何提高页面性能优化？"><a href="#10-请问web前端开发，如何提高页面性能优化？" class="headerlink" title="10.请问web前端开发，如何提高页面性能优化？"></a>10.请问web前端开发，如何提高页面性能优化？</h2><h2 id="11-请简述你所了解到的web攻击技术。"><a href="#11-请简述你所了解到的web攻击技术。" class="headerlink" title="11.请简述你所了解到的web攻击技术。"></a>11.请简述你所了解到的web攻击技术。</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/21/type-of-date/" rel="next" title="数据类型">
+                <i class="fa fa-chevron-left"></i> 数据类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjI1NC84ODE4"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="Eveywong" />
+            
+              <p class="site-author-name" itemprop="name">Eveywong</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Evey-huang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:evey_wong@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/yourname" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-标签上title和alt属性的区别是什么？"><span class="nav-number">1.</span> <span class="nav-text">1.标签上title和alt属性的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-relative、absolute、static、fixed的作用，相对谁定位？"><span class="nav-number">2.</span> <span class="nav-text">2.relative、absolute、static、fixed的作用，相对谁定位？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-请画出css盒模型。"><span class="nav-number">3.</span> <span class="nav-text">3.请画出css盒模型。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-请写一个数组去重的方法。"><span class="nav-number">4.</span> <span class="nav-text">4.请写一个数组去重的方法。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法1——Set"><span class="nav-number">4.0.1.</span> <span class="nav-text">方法1——Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法2——forEach"><span class="nav-number">4.0.2.</span> <span class="nav-text">方法2——forEach</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-请写一个方法，将URL中的查询字符串解析成一个字典对象。"><span class="nav-number">5.</span> <span class="nav-text">5.请写一个方法，将URL中的查询字符串解析成一个字典对象。</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#代码"><span class="nav-number">5.0.0.0.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#结果"><span class="nav-number">5.0.0.0.2.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-一个页面从输入URL到页面加载完的过程中都发生了什么事情？"><span class="nav-number">6.</span> <span class="nav-text">6.一个页面从输入URL到页面加载完的过程中都发生了什么事情？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-请简述页面渲染的过程。"><span class="nav-number">7.</span> <span class="nav-text">7.请简述页面渲染的过程。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-判断一个字符串中出现次数最多的-字符，并统计这个次数。"><span class="nav-number">8.</span> <span class="nav-text">9.判断一个字符串中出现次数最多的 字符，并统计这个次数。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-请问web前端开发，如何提高页面性能优化？"><span class="nav-number">9.</span> <span class="nav-text">10.请问web前端开发，如何提高页面性能优化？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-请简述你所了解到的web攻击技术。"><span class="nav-number">10.</span> <span class="nav-text">11.请简述你所了解到的web攻击技术。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eveywong</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
