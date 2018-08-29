@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo配置动态背景]]></title>
+    <url>%2F2018%2F08%2F29%2Fhexo-canvas%2F</url>
+    <content type="text"><![CDATA[修改Next主题配置文件_config.yml12# Canvas-nestcanvas_next: true]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>动态背景</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Next主题添加站内搜索]]></title>
     <url>%2F2018%2F08%2F29%2Fhexo-next%2F</url>
     <content type="text"><![CDATA[背景随着文章的增多，标签和归档已经不能满足要求了，想要快速查找文章需要一个搜索功能。Next主题支持集成Swiftype、微搜索、Local Search和Algolia，我选择的是Hexo提供的Local Search，原理是通过hexo-generator-search插件在本地生成一个search.xml文件，搜索时从这个文件中根据关键字检索出相应的链接。 安装安装hexo-generator-searchdb插件 1npm install hexo-generator-searchdb --save 修改配置文件修改站点配置文件_config.yml123456# searchsearch: path: search.xml field: post format: html limit: 10000 修改Next主题配置文件_config.yml123# Local searchlocal_search: enable: true]]></content>
@@ -281,8 +293,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>ubuntu16.04</tag>
         <tag>ubuntu18.04</tag>
+        <tag>ubuntu16.04</tag>
         <tag>MacOSX</tag>
         <tag>mongodb</tag>
       </tags>
