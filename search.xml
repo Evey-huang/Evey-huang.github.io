@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CSS中的尺寸单位]]></title>
+    <url>%2F2018%2F08%2F30%2Fcss-unit%2F</url>
+    <content type="text"><![CDATA[CSS中的尺寸单位整理一下日常会用到的css尺寸/长度单位。 概览绝对单位 px:：Pixel 像素 pt：Points 磅 相对单位 %：百分比 rem：Root element meter 根据根文档（body/html）字体计算尺寸 vh：View height 可视范围高度 vw：View width 可视范围宽度 运算 calc：calculate 四则运算 详细绝对单位 px-Pixel像素：像素px相对于设备显示器屏幕分辨率而言。 123p &#123; font-size: 14px&#125; pt-Point 磅：3pt = 4px 123p &#123; font-size: 10pt&#125; 相对单位 %百分比：相对于父元素宽度 1234567891011121314&lt;body&gt; &lt;div class="parent"&gt; &lt;div class="children"&gt;&lt;/div&gt; &lt;/div&gt;&lt;/body&gt;&lt;style&gt;.parent &#123; width: 100px&#125;.children &#123; width: 50% // children的宽度为50px&#125;&lt;/style&gt; em-Element meter：根据文档计算尺寸 相对于当前文档对象内文本的字体尺寸而言，若未指定字体大小则继承自上级元素，以此类推，直至body，若body未指定则为浏览器默认大小。 12345678910111213&lt;body&gt; &lt;div class="element"&gt;&lt;/div&gt;&lt;/body&gt;&lt;style&gt;.body &#123; font-size: 14px&#125;.element &#123; font-size: 16px width: 2em // 2em === 32px&#125;&lt;/style&gt; rem-Root element meter：根据根文档（body/html）字体计算尺寸 相对于根文档对象（body/html）内文本的字体尺寸而言，若未指定字体大小则继承为浏览器默认字体大小。 12345678910111213&lt;body&gt; &lt;div class="element"&gt;&lt;/div&gt;&lt;/body&gt;&lt;style&gt;.body &#123; font-size: 14px&#125;.element &#123; font-size: 16px width: 2em // 2em === 28px&#125;&lt;/style&gt; vh-View heigh/vw-View width：可视范围 相对于可视范围的高度和宽度，可视范围被均分为100单位的vh/vw；可视范围是指屏幕可见范围，不是父元素的，百分比是相对于包含它的最近的父元素的高度和宽度。 假设设备可视范围为高度900px，宽度750px，则1vh = 900px/100 = 9px, 1vw = 750px/100 = 7.5px 12345678910111213141516171819&lt;body&gt; &lt;h1&gt;article title&lt;/h1&gt; &lt;div class="element"&gt;&lt;/div&gt; &lt;div class="full-height"&gt;&lt;/div&gt;&lt;/body&gt;&lt;style&gt;.element &#123; width: 500vw; height: 80vh; // 如果屏幕高度为1000px，则该元素高度为800px，vw同理&#125;.full-height &#123; height: 100vh; // 轻易实现了与屏幕同等高度的元素&#125;h1 &#123; width: 100vw; // 设置一个和屏幕同宽的标题，标题的字体大小就会自动根据浏览器的宽度进行缩放，以达到字体和viewport大小同步的效果&#125;&lt;/style&gt; 运算 calc-calculate：四则运算 用于动态计算长度值。 calc运算规则： 需要注意的是，运算符前后都需要保留一个空格； 任何长度值都可以使用calc()函数进行计算； calc()函数支持 “+”, “-“, “*”, “/“ 运算； calc()函数使用标准的数学运算优先级规则； 12345678910&lt;body&gt; &lt;div class="calc"&gt;&lt;/div&gt;&lt;/body&gt;&lt;style&gt;.calc &#123; width: calc(100%-50px); // 宽度为100%-50px&#125;&lt;/style&gt;]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>px</tag>
+        <tag>pt</tag>
+        <tag>rem</tag>
+        <tag>vh</tag>
+        <tag>vw</tag>
+        <tag>calc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo配置动态背景]]></title>
     <url>%2F2018%2F08%2F29%2Fhexo-canvas%2F</url>
     <content type="text"><![CDATA[修改Next主题配置文件_config.yml12# Canvas-nestcanvas_next: true]]></content>
