@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[从0开始搭建一个React项目]]></title>
+    <url>%2F2018%2F09%2F10%2Freact1%2F</url>
+    <content type="text"><![CDATA[从0开始搭建一个React项目React是什么？React 是一个采用声明式，高效而且灵活的用来构建用户界面的框架。 使用create-react-app快速构建React开发环境1234$ npm install -g create-react-app$ create-react-app my-app$ cd my-app/$ npm start 启动页面]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[HTML5隐藏video控件的下载按钮]]></title>
     <url>%2F2018%2F09%2F07%2Fhtml5-video%2F</url>
     <content type="text"><![CDATA[今天需要给官网添加视频，添加完之后发现不需要下载按钮，所以需要隐藏掉，踩了点坑这里记录一下。 正确示范 nodownload 设置是否去除去除下载按钮nodownload 1&lt;video src="video.mp4" controls controlslist="nodownload"&gt;&lt;/video&gt; 参考地址 错误示范（敲重点！没用！！没用！！！）css方法12345678910video &#123; width: 100%; &amp;::-webkit-media-controls &#123; overflow: hidden !important; &#125; &amp;::-webkit-media-controls-enclosure &#123; width: calc(100% + 15px); margin-left: auto; &#125;&#125;]]></content>
