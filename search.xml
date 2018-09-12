@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CSS之object-fit]]></title>
+    <url>%2F2018%2F09%2F12%2Fobject-fit%2F</url>
+    <content type="text"><![CDATA[CSS属性object-fit指定替换元素的内容应该如何适应到其使用的高度和宽度确定的框。 HTML1234567&lt;div class="box"&gt; &lt;img src="UNADJUSTEDNONRAW_thumb_2d9.jpg" alt="" class="fill"&gt; &lt;img src="UNADJUSTEDNONRAW_thumb_2d9.jpg" alt="contain" class="contain"&gt; &lt;img src="UNADJUSTEDNONRAW_thumb_2d9.jpg" alt="cover" class="cover"&gt; &lt;img src="UNADJUSTEDNONRAW_thumb_2d9.jpg" alt="none" class="none"&gt; &lt;img src="UNADJUSTEDNONRAW_thumb_2d9.jpg" alt="scale-down" class="scale-down"&gt;&lt;/div&gt; CSS1234567891011121314151617181920212223.box &#123; display: flex; justify-content: center;&#125;img &#123; width: 200px; height: 200px; background-color: #cd0000; margin: 30px;&#125;.fill &#123; object-fit: fill;&#125;.contain &#123; object-fit: contain;&#125;.none &#123; object-fit: none;&#125;.scale-down &#123; object-fit: scale-down;&#125; 效果图 fill被替换的内容大小可以填充元素的内容框。整个对象将完全填充此框。如果对象的高宽比不匹配其框的宽高比，那么该对象将被拉伸以适应。 contain被替换的内容将被缩放，以在填充元素的内容框时保持其宽高比。整个对象在填充盒子的同时保留其长宽比，因此如果宽高比与框的宽高比不匹配，该对象将被添加“黑边”。 cover被替换的内容大小保持其宽高比，同时填充元素的整个内容框。如果对象的宽高比与盒子的宽高比不匹配，该对象将被裁剪以适应。 none被替换的内容尺寸不会被改变。 scale-down内容的尺寸就像是指定咯none或contain，取决于哪一个将导致更小的对象尺寸。 浏览器兼容 IE全家不兼容 Chrome29+兼容 Safari7.1+IOS8+兼容]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>object-fit</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[从0开始搭建一个React项目]]></title>
     <url>%2F2018%2F09%2F10%2Freact1%2F</url>
     <content type="text"><![CDATA[从0开始搭建一个React项目React是什么？React 是一个采用声明式，高效而且灵活的用来构建用户界面的框架。 使用create-react-app快速构建React开发环境1234$ npm install -g create-react-app$ create-react-app my-app$ cd my-app/$ npm start 启动页面]]></content>
