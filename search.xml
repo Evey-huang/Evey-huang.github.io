@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mac迅雷瘦身]]></title>
+    <url>%2F2018%2F10%2F10%2Fmac-thunder%2F</url>
+    <content type="text"><![CDATA[打开应用程序目录，选中迅雷App，在辅助菜单中点击显示包内容进入其内部 删除Contents &gt; Bundles目录 进入Contents &gt; PlugIns目录，删除插件，建议删除的插件有： advertising(广告) featuredpage(主页) feedback(反馈) iOSThunder(手机迅雷) myvip(会员中心) softmanager(软件管家) viprenew(会员开通) viptips(会员提示) xlbrowser(内置浏览器) xlplayer(迅雷影音) 如果不需要开机自启动迅雷，可以删除Contents &gt; Library &gt; LoginItems目录]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[持续集成服务Travis CI了解下]]></title>
     <url>%2F2018%2F09%2F26%2Ftravis-ci%2F</url>
     <content type="text"><![CDATA[什么是持续集成持续集成(Continuous Integration,简称CI)，指的是在一个项目中，任何人对代码库的任何改动都会触发CI服务器自动对项目进行构建，自动运行测试，甚至自动部署到测试环境。优点是随时发现问题，随时修复。 如何为Github上托管的开源项目用Travis CI进行持续集成什么是Travis CITravis CI是一个在线的、分布式的持续集成服务，用来构建及测试在Github托管的代码。 使用Travis CI先决环境要开始使用Travis CI，需要满足以下条件： 拥有一个Github账户 拥有Github上托管的项目的所有者权限 开始使用Travis CI 访问官方网站https://travis-ci.org/，使用github账户登入Travis CI 接受Travis CI的授权。 单击绿色激活按钮，然后选择要与Travis CI一起使用的项目 到Github仓库获取TOKEN。打开setting-&gt;Developer seeing-&gt;Personal access tokens 到Travis添加TOKEN。setting-&gt;Environment Variables 添加.travis.yml文件到存储库以告知Travis CI要执行的操作。 12345678910language: "node_js"node_js: - "node"install: - "npm install gitbook -g" - "npm install -g gitbook-cli"script: - "gitbook build"after_success: - "sh build.sh" 添加build.sh脚本文件到存储库 123456789101112131415161718192021#!/bin/bashset -o errexit -o nounsetTRAVIS_BRANCH=masterif [ "$TRAVIS_BRANCH" != "master" ]then echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!" exit 0 fi rev=$(git rev-parse --short HEAD) cd _book git init git config user.name "Travis" git config user.email "evey_wong@163.com" git remote add upstream https://evey-huang:$TOKEN@github.com/yznu-cn/yznu-cn.github.io.git git fetch upstream git reset upstream/master #echo "custom domain" &gt; CNAME git add -A git commit -m "rebuild pages at $&#123;rev&#125;" git push -q upstream HEAD:master 将.travis.yml和build.sh文件添加到git，commit和push以触发Travis CI构建 到https://travis-ci.org/查看构建是否通过 Travis CI实战这次之所以接触到Travis CI是因为学长组织了一个开源学习小组，要我帮忙做这个事。没接触之前觉得好难啊，接触之后觉得也没这么难，还挺好玩的。想看代码戳这里]]></content>
@@ -483,8 +494,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>ubuntu18.04</tag>
         <tag>ubuntu16.04</tag>
+        <tag>ubuntu18.04</tag>
         <tag>MacOSX</tag>
         <tag>mongodb</tag>
       </tags>
