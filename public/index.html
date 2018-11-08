@@ -187,12 +187,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            关于
+            标签
           </a>
         </li>
       
@@ -216,11 +216,55 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
 
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -249,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/enospc错误/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/tcp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
@@ -268,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/04/enospc错误/" itemprop="url">在Linux环境中执行hexo server返回enospc错误解决方案</a></h1>
+                <a class="post-title-link" href="/2018/11/08/tcp/" itemprop="url">TCP协议的三次握手和四次分手</a></h1>
         
 
         <div class="post-meta">
@@ -280,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-04T14:27:59+08:00">
-                2018-07-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T18:10:49+08:00">
+                2018-11-08
               </time>
             
 
@@ -303,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Network</span>
                   </a>
                 </span>
 
@@ -342,17 +386,15 @@
       
         
           
-          问题在Linux环境下运行hexo server时返回一个错误：
-1Error: watch ENOSPC ...
-解决方案
-可以通过运行npm dedupe命令
-若方案1不起作用，则在控制台尝试以下操作：
+          # 
 
-1$ echo fs.inotify.max_user_watches = 524288 
+三次握手什么是三次握手
+第一次握手：建立连接。客户端发送连接请求报文段，将SYN位置为1，Sequence Number为x；然后客户端进入SYN_SEND状态，等待服务器的确认。
+第二次握手：服务器收到SYN报文段。服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/04/enospc错误/#more" rel="contents">
+            <a class="btn" href="/2018/11/08/tcp/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -403,7 +445,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/JS数组之排列组合/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/react理念/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
@@ -422,7 +464,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/28/JS数组之排列组合/" itemprop="url">JS数组之排列组合</a></h1>
+                <a class="post-title-link" href="/2018/11/08/react理念/" itemprop="url">React理念</a></h1>
         
 
         <div class="post-meta">
@@ -434,8 +476,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T19:18:21+08:00">
-                2018-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T18:06:43+08:00">
+                2018-11-08
               </time>
             
 
@@ -457,8 +499,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
                   </a>
                 </span>
 
@@ -496,15 +538,24 @@
       
         
           
-          两个数组排列组合比如目前有两个数组：
-a=[1,2,3]
-b=[3,4,5]
-那么数组排列的情况就有3*3=9种，代码：
-123456789101112var a=[1,2,3];var b=[4,5,6];var newArr=[];var index=0; // 组合次数for(var i=0;
+          
+单向数据流
+确定UI组件层级
+确定state的位置
+添加反向数据流
+
+例子：可搜索的产品数据表格实现步骤：
+把UI划分出组件层级
+定义UI状态的最小表示（即确定有哪些state）
+确定state位置
+添加反向数据流
+
+1. 把UI划分出组件层级层级结构
+FilterableProductTable
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/28/JS数组之排列组合/#more" rel="contents">
+            <a class="btn" href="/2018/11/08/react理念/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -555,7 +606,7 @@ b=[3,4,5]
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/e2e端到端测试使用ES6遇到的问题及解决方案/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/firewall/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
@@ -574,7 +625,7 @@ b=[3,4,5]
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/28/e2e端到端测试使用ES6遇到的问题及解决方案/" itemprop="url">e2e端到端测试使用ES6遇到的问题及解决方案</a></h1>
+                <a class="post-title-link" href="/2018/11/08/firewall/" itemprop="url">防火墙</a></h1>
         
 
         <div class="post-meta">
@@ -586,8 +637,8 @@ b=[3,4,5]
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T19:04:09+08:00">
-                2018-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T18:01:32+08:00">
+                2018-11-08
               </time>
             
 
@@ -609,8 +660,8 @@ b=[3,4,5]
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/测试/" itemprop="url" rel="index">
-                    <span itemprop="name">测试</span>
+                  <a href="/categories/Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Network</span>
                   </a>
                 </span>
 
@@ -648,17 +699,14 @@ b=[3,4,5]
       
         
           
-          问题描述：
+          
+定义防火墙是位于两个（或多个）网络之间执行访问控制的软件和硬件系统，它根据访问控制规则对进出网络的数据流进行过滤。
 
-(function (exports, require, module, filename, dirname) { import _Object$is from ‘babel-runtime/core-js/object/is’;、
-
-解决：
-package.json
-在package
+防火墙可以作为不同网络或网络安全域之间信息的出入口，能根据单位或部门的安全策略控制出入网络的信息流，且本身具有较强的抗攻击能力。它是提供信息安全服务、实现网络和信息安全的重要基础设
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/28/e2e端到端测试使用ES6遇到的问题及解决方案/#more" rel="contents">
+            <a class="btn" href="/2018/11/08/firewall/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -709,7 +757,7 @@ package.json
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/Echarts几种常见图标和自适应/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/10/mac-thunder/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
@@ -728,7 +776,7 @@ package.json
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/28/Echarts几种常见图标和自适应/" itemprop="url">Echarts几种常见图标和自适应</a></h1>
+                <a class="post-title-link" href="/2018/10/10/mac-thunder/" itemprop="url">Mac迅雷瘦身</a></h1>
         
 
         <div class="post-meta">
@@ -740,8 +788,8 @@ package.json
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T18:58:30+08:00">
-                2018-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-10T11:26:22+08:00">
+                2018-10-10
               </time>
             
 
@@ -802,13 +850,18 @@ package.json
       
         
           
-          按需引入Echarts组件封装组件
-index.vue
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162&lt;tem
+          
+打开应用程序目录，选中迅雷App，在辅助菜单中点击显示包内容进入其内部
+删除Contents &gt; Bundles目录
+进入Contents &gt; PlugIns目录，删除插件，建议删除的插件有：
+
+advertising(广告)
+featuredpage(主页)
+feedback(反馈)
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/28/Echarts几种常见图标和自适应/#more" rel="contents">
+            <a class="btn" href="/2018/10/10/mac-thunder/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -859,7 +912,7 @@ index.vue
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/VSCode插件配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/travis-ci/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
@@ -878,7 +931,7 @@ index.vue
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/28/VSCode插件配置/" itemprop="url">VSCode插件配置</a></h1>
+                <a class="post-title-link" href="/2018/09/26/travis-ci/" itemprop="url">持续集成服务Travis CI了解下</a></h1>
         
 
         <div class="post-meta">
@@ -890,8 +943,8 @@ index.vue
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T18:48:35+08:00">
-                2018-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T14:40:38+08:00">
+                2018-09-26
               </time>
             
 
@@ -952,15 +1005,12 @@ index.vue
       
         
           
-          常用插件
-Beautify - 通过配置.jsbeautifyrc文件可以格式化javascript、json、css、sass和html文件
-Code Runner - 支持运行多种语言的代码片段或代码文件（比如C++、java等）
-ESLint - 代码检查
-HTML CSS Support -
+          什么是持续集成持续集成(Continuous Integration,简称CI)，指的是在一个项目中，任何人对代码库的任何改动都会触发CI服务器自动对项目进行构建，自动运行测试，甚至自动部署到测试环境。优点是随时发现问题，随时修复。
+如何为Github上托管的开源项目用Travis CI进行持续集成
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/28/VSCode插件配置/#more" rel="contents">
+            <a class="btn" href="/2018/09/26/travis-ci/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1011,7 +1061,7 @@ HTML CSS Support -
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/前端开发工程师面试问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/state/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
@@ -1030,7 +1080,7 @@ HTML CSS Support -
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/28/前端开发工程师面试问题/" itemprop="url">前端开发工程师面试问题</a></h1>
+                <a class="post-title-link" href="/2018/09/26/state/" itemprop="url">State&生命周期</a></h1>
         
 
         <div class="post-meta">
@@ -1042,8 +1092,8 @@ HTML CSS Support -
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T18:46:24+08:00">
-                2018-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T14:35:54+08:00">
+                2018-09-26
               </time>
             
 
@@ -1065,8 +1115,8 @@ HTML CSS Support -
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试题/" itemprop="url" rel="index">
-                    <span itemprop="name">面试题</span>
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
                   </a>
                 </span>
 
@@ -1104,11 +1154,15 @@ HTML CSS Support -
       
         
           
-          JS问题JavaScript原型、原型链 ? 有什么特点？每个对象都会在其内部初始化一个属性，就是prototype(原型)，当我们访问一个对象的属性时，如果这个对象内部不存在这个属性，那么他就会去prototype里找这个属性，这个prototype又会有自己的prototype，于是就这样一直找
+          State
+局部状态state：一个功能只适用于类定义组件；
+构造函数(constructor)是唯一能够初始化this.state的地方；
+应当使用setState()更新局部状态，而不是直接更改this.state的值；
+this.props和this.state可能是异步更新，不能用来计算th
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/28/前端开发工程师面试问题/#more" rel="contents">
+            <a class="btn" href="/2018/09/26/state/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1159,7 +1213,7 @@ HTML CSS Support -
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/object/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/jsx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
@@ -1178,7 +1232,7 @@ HTML CSS Support -
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/28/object/" itemprop="url">详解object.is()与比较操作符“===”和“==”</a></h1>
+                <a class="post-title-link" href="/2018/09/26/jsx/" itemprop="url">JSX</a></h1>
         
 
         <div class="post-meta">
@@ -1190,8 +1244,8 @@ HTML CSS Support -
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T18:43:54+08:00">
-                2018-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T14:34:33+08:00">
+                2018-09-26
               </time>
             
 
@@ -1213,8 +1267,8 @@ HTML CSS Support -
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
                   </a>
                 </span>
 
@@ -1252,19 +1306,12 @@ HTML CSS Support -
       
         
           
-          ==操作在需要的情况下自动进行类型转换，===操作不会执行任何转换。
-例如：
-
-
-[10] == 10  // true,自动转换为相同类型
-[10] === 10 // false，不会进行类型转换
-[] == 0 // true
-[] === 0 //false
-‘ ‘ == false // 
+          什么是JSX本质上来讲，JSX 只是为 React.createElement(component, props, …children) 方法提供的语法糖。比如：
+1&lt;MyButton color=&quot;blue&quot; shadowSize=&#123;2&#125;&gt;   
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/28/object/#more" rel="contents">
+            <a class="btn" href="/2018/09/26/jsx/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1315,7 +1362,7 @@ HTML CSS Support -
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/使用NAP安装包失败解决办法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/props/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
@@ -1334,7 +1381,7 @@ HTML CSS Support -
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/28/使用NAP安装包失败解决办法/" itemprop="url">使用NAP安装包失败解决办法</a></h1>
+                <a class="post-title-link" href="/2018/09/26/props/" itemprop="url">组件&props</a></h1>
         
 
         <div class="post-meta">
@@ -1346,8 +1393,8 @@ HTML CSS Support -
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T18:40:27+08:00">
-                2018-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T14:30:48+08:00">
+                2018-09-26
               </time>
             
 
@@ -1369,8 +1416,8 @@ HTML CSS Support -
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
                   </a>
                 </span>
 
@@ -1408,12 +1455,12 @@ HTML CSS Support -
       
         
           
-          方法一：通过config命令12$ npm config set registry https://registry.npm.taobao.org$ npm info underscore
-方法二：命令行指定1$ npm --registry https://registry.npm.taobao.
+          组件可以将UI切分成一些独立的、可复用的部件，从概念上看就像是函数，它可以接收任意的参数（称之为“props”），并返回一个需要在页面上展示的React元素。由于props具有只读性，因此所有的React组件必须像纯函数那样使用它们的props。
+组件定义定义组件有两种方法，分别为函数定义和类定义，
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/28/使用NAP安装包失败解决办法/#more" rel="contents">
+            <a class="btn" href="/2018/09/26/props/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1464,7 +1511,7 @@ HTML CSS Support -
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/六种方法实现JavaScript数组去重/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/combination/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
@@ -1483,7 +1530,7 @@ HTML CSS Support -
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/28/六种方法实现JavaScript数组去重/" itemprop="url">六种方法实现JavaScript数组去重</a></h1>
+                <a class="post-title-link" href="/2018/09/26/combination/" itemprop="url">组合VS继承</a></h1>
         
 
         <div class="post-meta">
@@ -1495,8 +1542,8 @@ HTML CSS Support -
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T18:38:49+08:00">
-                2018-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T14:28:35+08:00">
+                2018-09-26
               </time>
             
 
@@ -1518,8 +1565,8 @@ HTML CSS Support -
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
                   </a>
                 </span>
 
@@ -1557,13 +1604,14 @@ HTML CSS Support -
       
         
           
-          方法1——SetES6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。
-Set本身是一个构造函数，用来生成Set数据结构，Array.from方法可以将Set结构转为数组，在Set内部两个NaN是相等的，两个对象是总不相等的
-12345function unique(a
+          组合VS继承
+React具有强大的组合模型，建议使用组合而不是继承来复用组件之间的代码
+包含关系。一些组件（比如Sidebar或Dialog）不能提前知道它们的子组件是什么，所以建议这些组件使用children属性将子元素直接传递到输出
+特殊实例。有时我们认为组件是其他组件的特殊实例，这也是通过组合
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/28/六种方法实现JavaScript数组去重/#more" rel="contents">
+            <a class="btn" href="/2018/09/26/combination/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1614,7 +1662,7 @@ Set本身是一个构造函数，用来生成Set数据结构，Array.from方法�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/ubuntu下使用和配置shadowsocks/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/status/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eveywong">
@@ -1633,7 +1681,7 @@ Set本身是一个构造函数，用来生成Set数据结构，Array.from方法�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/28/ubuntu下使用和配置shadowsocks/" itemprop="url">ubuntu下使用和配置shadowsocks</a></h1>
+                <a class="post-title-link" href="/2018/09/26/status/" itemprop="url">状态提升</a></h1>
         
 
         <div class="post-meta">
@@ -1645,8 +1693,8 @@ Set本身是一个构造函数，用来生成Set数据结构，Array.from方法�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T18:25:06+08:00">
-                2018-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T11:56:56+08:00">
+                2018-09-26
               </time>
             
 
@@ -1668,8 +1716,8 @@ Set本身是一个构造函数，用来生成Set数据结构，Array.from方法�
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
-                    <span itemprop="name">Ubuntu</span>
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
                   </a>
                 </span>
 
@@ -1707,14 +1755,12 @@ Set本身是一个构造函数，用来生成Set数据结构，Array.from方法�
       
         
           
-          1. 安装shadowsocks-Qt51sudo add-apt-repository ppa:hzwhuang/ss-qt5
-1sudo apt-get update
-1sudo apt-get install shadowsocks-qt5
-注意！！此处有bug，执行这三条命令不成功的话则找到
+          状态提升在构建真实应用的时候，随着业务的复杂度的提升，我们编写的组件的结构层次也会越来越复杂，处理的数据也会越来越庞大，同一份数据有时会由多个不同的组件渲染，因此在多个不同的组件内部有可能会修改同一份数据，这样便出现了数据共享问题。解决这个问题的初步方式之一就是状态提升。
+状态提升过程状态提升的做法
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/28/ubuntu下使用和配置shadowsocks/#more" rel="contents">
+            <a class="btn" href="/2018/09/26/status/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1756,7 +1802,7 @@ Set本身是一个构造函数，用来生成Set数据结构，Array.from方法�
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1806,7 +1852,7 @@ Set本身是一个构造函数，用来生成Set数据结构，Array.from方法�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1817,7 +1863,7 @@ Set本身是一个构造函数，用来生成Set数据结构，Array.from方法�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1828,7 +1874,7 @@ Set本身是一个构造函数，用来生成Set数据结构，Array.from方法�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">127</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2056,6 +2102,323 @@ Set本身是一个构造函数，用来生成Set数据结构，Array.from方法�
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
