@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/travis2.png">
 <meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/travis3.png">
 <meta property="og:image" content="http://p1cjg886l.bkt.clouddn.com/travis4.png">
-<meta property="og:updated_time" content="2018-11-19T10:21:53.462Z">
+<meta property="og:updated_time" content="2018-11-22T09:39:29.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="持续集成服务Travis CI了解下">
 <meta name="twitter:description" content="什么是持续集成持续集成(Continuous Integration,简称CI)，指的是在一个项目中，任何人对代码库的任何改动都会触发CI服务器自动对项目进行构建，自动运行测试，甚至自动部署到测试环境。优点是随时发现问题，随时修复。 如何为Github上托管的开源项目用Travis CI进行持续集成什么是Travis CITravis CI是一个在线的、分布式的持续集成服务，用来构建及测试在Git">
@@ -424,7 +424,7 @@
 <ol>
 <li>添加<code>build.sh</code>脚本文件到存储库</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"></span><br><span class="line">set -o errexit -o nounset</span><br><span class="line">TRAVIS_BRANCH=master</span><br><span class="line">if [ "$TRAVIS_BRANCH" != "master" ]</span><br><span class="line">then </span><br><span class="line">	    echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!" </span><br><span class="line">		    exit 0</span><br><span class="line">		fi</span><br><span class="line">		rev=$(git rev-parse --short HEAD)</span><br><span class="line">		cd _book</span><br><span class="line">		git init</span><br><span class="line">		git config user.name "Travis"</span><br><span class="line">		git config user.email "evey_wong@163.com"</span><br><span class="line">		git remote add upstream https://evey-huang:$TOKEN@github.com/yznu-cn/yznu-cn.github.io.git</span><br><span class="line">		git fetch upstream</span><br><span class="line">		git reset upstream/master</span><br><span class="line"><span class="meta">		#</span>echo "custom domain" &gt; CNAME</span><br><span class="line">		git add -A</span><br><span class="line">		git commit -m "rebuild pages at $&#123;rev&#125;"</span><br><span class="line">		git push -q upstream HEAD:master</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">set -o errexit -o nounset</span><br><span class="line">TRAVIS_BRANCH=master</span><br><span class="line">if [ "$TRAVIS_BRANCH" != "master" ]</span><br><span class="line">then </span><br><span class="line">	    echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!" </span><br><span class="line">		    exit 0</span><br><span class="line">		fi</span><br><span class="line">		rev=$(git rev-parse --short HEAD)</span><br><span class="line">		cd _book</span><br><span class="line">		git init</span><br><span class="line">		git config user.name "Travis"</span><br><span class="line">		git config user.email "evey_wong@163.com"</span><br><span class="line">		git remote add upstream https://evey-huang:$TOKEN@github.com/yznu-cn/yznu-cn.github.io.git</span><br><span class="line">		git fetch upstream</span><br><span class="line">		git reset upstream/master</span><br><span class="line"><span class="meta">		#</span><span class="bash"><span class="built_in">echo</span> <span class="string">"custom domain"</span> &gt; CNAME</span></span><br><span class="line">		git add -A</span><br><span class="line">		git commit -m "rebuild pages at $&#123;rev&#125;"</span><br><span class="line">		git push -q upstream HEAD:master</span><br></pre></td></tr></table></figure>
 <ol>
 <li><p>将<code>.travis.yml</code>和<code>build.sh</code>文件添加到git，commit和push以触发Travis CI构建</p>
 </li>
@@ -563,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -585,7 +585,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-count">129</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

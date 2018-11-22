@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[规范commit message]]></title>
+    <url>%2F2018%2F11%2F22%2FcommitMessage%2F</url>
+    <content type="text"><![CDATA[为什么需要标准化的commit message 提供更多的历史信息，方便快速浏览 可以直接从commit生成Changelog 为了装B 如何规范commit messagecommit规范可以通过以下工具来约束： commitlint:用来校验 git commit message 的工具 husky:可以防止坏的git commit commitizen:用来格式化 git commit message 的工具 Install commitlint1npm install --save-dev @commitlint/cli @commitlint/config-conventional 在项目中添加commitlint.config.js文件 1module.exports = &#123;extends: ['@commitlint/config-conventional']&#125; Install husky1npm install --save-dev husky 在package.json中添加 123456"husky": &#123; "hooks": &#123; "pre-commit": "npm test", "commit-msg": "commitlint -E HUSKY_GIT_PARAMS" &#125; &#125;, Testwrong correct Install commitizen123npm install -g commitizennpm install cz-conventional-changelog --save-dev // changelog，是生成changelog的工具commitizen init cz-conventional-changelog --save-dev --save-exact // 使其支持Angular的Commit message格式 在package.json中添加 12345"config": &#123; "commitizen": &#123; "path": "./node_modules/cz-conventional-changelog" &#125; &#125;, Use git cz instead of git commit when committing Test Commit Type feat：新功能（new feature） fix：修补bug（bug fix） docs：文档更新（documentation change） style：格式，不影响代码运行的变动（not affect the meaning of the code） refactor：重构，既不是新增功能也不是修补bug的代码变动（a code change that neither fixes a bug nor a feature） perf：性能，提高性能的代码变动（a code change that improves performance） test：增加测试 build：涉及构建系统和依赖的修改，比如npm、gulp ci：涉及CI配置文件的修改，比如travis chore：构建过程或辅助工具的变动（other changes that don’t modify src or test files） revert：恢复之前的提交]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>commit message</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2018读书书单]]></title>
     <url>%2F2018%2F11%2F19%2Fread2018%2F</url>
     <content type="text"><![CDATA[其实今年有读挺多书，但是一直懒得写读书笔记，据不完全统计，以下是今年读过的书： 你一年的8760小时-艾力（励志书偶尔看就可以了） 单恋 - 东野圭吾 彷徨之刃 - 东野圭吾 谁杀了她 - 东野圭吾 没有凶手的暗夜 - 东野圭吾 幻夜 - 东野圭吾（看完这一本书之后就再也不想看东野圭吾的作品了） 幸存者 - 法医秦明（高中最喜欢的厕所读物） 明朝那些事儿 - 当年明月（花了很长时间读完的，觉得挺有趣） 笑场 - 李诞（因为喜欢李诞所以才读的） 黄金时代 - 王小波（三十而立那一章节最有意思） 围城 - 钱钟书（听了围城的大名很多年，终于鼓起勇气读了） 亲密关系 - Christopher Moon（读这本书收获很多，疯狂安利身边的人读） 胡兰成自传：今生今世 - 胡兰成（看锵锵三人行讲到这本书） 龙族(第五部) - 江南（满满都是青春，不知何时才更完） 活着活着就老了 - 冯唐（距离4年再读冯唐作品） 目前手上还有好几本李银河的作品和万历十五年这本书，目测今年读不完了，毕竟距离12月很近了，如果有时间还想重温一下《红楼梦》、《水浒传》和《三国演义》，毕竟看这三本书是十年前的事了，如今再重温肯定会有不一样的收获。]]></content>

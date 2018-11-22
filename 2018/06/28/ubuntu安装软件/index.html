@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="EveyWong">
 <meta property="og:description" content="安装ubuntu版TeamViewer 下载软件包：https://www.teamviewer.com/zhcn/download/linux/  添加32位架构 1$ sudo dpkg --add-architecture i386  更新 1$ sudo apt-get update  安装 1$ sudo  dpkg  -i teamviewer_13.1.3026_amd64.deb">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-19T10:21:53.462Z">
+<meta property="og:updated_time" content="2018-11-22T09:39:29.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu安装软件">
 <meta name="twitter:description" content="安装ubuntu版TeamViewer 下载软件包：https://www.teamviewer.com/zhcn/download/linux/  添加32位架构 1$ sudo dpkg --add-architecture i386  更新 1$ sudo apt-get update  安装 1$ sudo  dpkg  -i teamviewer_13.1.3026_amd64.deb">
@@ -395,13 +395,13 @@
 <li><p>下载软件包：<a href="https://www.teamviewer.com/zhcn/download/linux/" target="_blank" rel="noopener">https://www.teamviewer.com/zhcn/download/linux/</a></p>
 </li>
 <li><p>添加32位架构</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo dpkg --add-architecture i386</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo dpkg --add-architecture i386</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更新</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt-get update</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get update</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo  dpkg  -i teamviewer_13.1.3026_amd64.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo  dpkg  -i teamviewer_13.1.3026_amd64.deb</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="ubuntu安装微信"><a href="#ubuntu安装微信" class="headerlink" title="ubuntu安装微信"></a>ubuntu安装微信</h2><ol>
@@ -415,19 +415,19 @@
 <h2 id="ubuntu安装JDK-8"><a href="#ubuntu安装JDK-8" class="headerlink" title="ubuntu安装JDK-8"></a>ubuntu安装JDK-8</h2><ol>
 <li>查看apt库都有哪些jdk版本</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> apt-cache search java|grep jdk</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> apt-cache search java|grep jdk</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li>选择版本进行安装</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt-get install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install openjdk-8-jdk</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li>设置环境变量</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo vim /etc/profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo vim /etc/profile</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li>添加以下内容</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> set java environment</span><br><span class="line">JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64</span><br><span class="line">JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib</span><br><span class="line">PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin</span><br><span class="line">export JAVA_HOME JRE_HOME CLASS_PATH PATH</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">set</span> java environment</span></span><br><span class="line">JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64</span><br><span class="line">JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib</span><br><span class="line">PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin</span><br><span class="line">export JAVA_HOME JRE_HOME CLASS_PATH PATH</span><br></pre></td></tr></table></figure>
 <ol>
 <li>让修改生效</li>
 </ol>
@@ -570,7 +570,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -592,7 +592,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-count">129</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

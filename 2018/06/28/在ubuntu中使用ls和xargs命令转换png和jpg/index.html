@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="EveyWong">
 <meta property="og:description" content="PNG转JPG1$ ls -1 *.png | xargs -n 1 bash -c &apos;convert &quot;$0&quot; &quot;$&amp;#123;0%.png&amp;#125;.jpg&quot;&apos; JPG转PNG1ls -1 *.jpg | xargs -n 1 bash -c &apos;convert &quot;$0&quot; &quot;$&amp;#123;0%.png&amp;#125;.png&quot;&apos; ls命令可以列出所有的png图像文件，xargs使得可以从标准输入构">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-19T10:21:53.466Z">
+<meta property="og:updated_time" content="2018-11-22T09:39:29.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在ubuntu中使用ls和xargs命令转换png和jpg">
 <meta name="twitter:description" content="PNG转JPG1$ ls -1 *.png | xargs -n 1 bash -c &apos;convert &quot;$0&quot; &quot;$&amp;#123;0%.png&amp;#125;.jpg&quot;&apos; JPG转PNG1ls -1 *.jpg | xargs -n 1 bash -c &apos;convert &quot;$0&quot; &quot;$&amp;#123;0%.png&amp;#125;.png&quot;&apos; ls命令可以列出所有的png图像文件，xargs使得可以从标准输入构">
@@ -391,7 +391,7 @@
       
 
       
-        <h4 id="PNG转JPG"><a href="#PNG转JPG" class="headerlink" title="PNG转JPG"></a>PNG转JPG</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ls -1 *.png | xargs -n 1 bash -c 'convert "$0" "$&#123;0%.png&#125;.jpg"'</span><br></pre></td></tr></table></figure>
+        <h4 id="PNG转JPG"><a href="#PNG转JPG" class="headerlink" title="PNG转JPG"></a>PNG转JPG</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls -1 *.png | xargs -n 1 bash -c <span class="string">'convert "$0" "$&#123;0%.png&#125;.jpg"'</span></span></span><br></pre></td></tr></table></figure>
 <h4 id="JPG转PNG"><a href="#JPG转PNG" class="headerlink" title="JPG转PNG"></a>JPG转PNG</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -1 *.jpg | xargs -n 1 bash -c 'convert "$0" "$&#123;0%.png&#125;.png"'</span><br></pre></td></tr></table></figure>
 <p><code>ls</code>命令可以列出所有的<code>png</code>图像文件，<code>xargs</code>使得可以从标准输入构建和执行<code>convert</code>命令，从而将所有<code>.png</code>图像转换为<code>.jpg</code>图像。</p>
 <p>说明：</p>
@@ -533,7 +533,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -555,7 +555,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-count">129</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
