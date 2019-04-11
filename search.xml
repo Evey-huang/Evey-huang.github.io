@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[近况]]></title>
+    <url>%2F2019%2F04%2F11%2Frecent%2F</url>
+    <content type="text"><![CDATA[好久没有更博了，讲讲近况。 工作最近一直忙于项目重构，技术栈由Vue变成了React 因为没学过React做起来比较吃力也遇到了很多问题，在长达一个月的时间里心情都比较Down，心情很容易受工作影响 现在慢慢能做好事情了，近期遇到的问题也一一解决了（虽然花的时间有点长，但好歹自己解决了） 虽然知道后面还会遇到很多问题但是还是很开心，因为看到了自己的进步和得到了领导的肯定。 结论：遇到问题真的不能急，要好好分析，一步一步做，总能解决的，着急容易捋不清思路然后就觉得很难自己做不来，很打击自信心。 生活 终于报驾校啦，下周要考科一啦，希望今年能顺利拿到驾驶证 终于把牙齿补了，真的要好好爱护牙齿呀，轻微蛀牙也要及时去补！！ 在开始上英语口语课了，但是频率不是很高，希望自己能坚持住 很少在家做饭了，希望还是要多做饭 最近很少追剧了（主要是没什么剧好看），又把阅读的习惯捡起来了，希望能keep住，尽量保持每周都有阅读 未来最近因为焦虑思考了很多，觉得自己还是不能太闲鱼，要好好努力赚钱呀，希望今年能重构一下自己，多投资一下自己，无论工作还是生活都要积极一点。]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[isNaN()与typeof比较]]></title>
     <url>%2F2018%2F12%2F28%2Ftypeof%2F</url>
     <content type="text"><![CDATA[日常写bug，有个业务需求需要判断参数是否为数值，首先想到的是用isNaN()，后同事建议用typeof正向判断较佳，写此文做记录。 isNaN()isNaN() 函数用于检查其参数是否是非数字值。 例：123456isNaN(null) // falseisNaN(undefined) // trueisNaN(NaN) // trueisNaN('') // falseisNaN(123) // falseisNaN('x') // true typeofJavaScript typeof是一个一元运算符，用来检查数据类型，检查完后会回传一个字符串，对于不同的数据类型会返回不同的字符串。typeof返回值有六种： number object string boolean function undefined 以number为例，检查参数是否为数值：123456typeof '123' === 'number' // falsetypeof '' === 'number' // falsetypeof null === 'number' //falsetypeof undefined === 'number' //falsetypeof 123 === 'number' // truetypeof NaN === 'number' // true 因为isNaN(null)为false，不太符合业务需求，所以最终选择typeof用于检查参数是否为数值（敲黑板！后端一般不会传NaN值，故无影响）。]]></content>
@@ -202,7 +213,7 @@
   </entry>
   <entry>
     <title><![CDATA[列表&Keys]]></title>
-    <url>%2F2018%2F09%2F22%2Freact-%E5%88%97%E8%A1%A8%2F</url>
+    <url>%2F2018%2F09%2F21%2Freact-%E5%88%97%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[渲染多个组件可以通过花括号{}在JSX内构建一个元素集合 12345678const numbers = [1, 2, 3, 4, 5];const listItems = numbers.map((numbers) =&gt; &lt;li&gt;&#123;numbers&#125;&lt;/li&gt;);ReactDOM.render( &lt;ul&gt;&#123;listItems&#125;&lt;/ul&gt;, document.getElementById(&apos;root&apos;)); 上面的例子通过使用map()方法遍历numbers数组，对数组中的每个元素返回&lt;li&gt;标签，最后得到一个数组listItems，然后把整个listItems插入到ul元素中，最后渲染进根DOM。 基础列表组件通常需要渲染一个列表到组件中。当创建一个元素时，必须包括一个特殊的key属性。key是唯一的标识，可以使用数据里面的id作为key，key应该绑定在循环的组件上而不是DOM元素上，key应该在数组的上下文中被指定。 12345678910111213141516function NumberList(props) &#123; const numbers = props.numbers; const listItems = numbers.map((number) =&gt; &lt;li key=&#123;number.toString()&#125;&gt;&#123;number&#125;&lt;/li&gt; ); return ( &lt;ul&gt;&#123;listItems&#125;&lt;/ul&gt; );&#125; const numbers = [1, 2, 3, 4, 5];ReactDOM.render( &lt;NumberList numbers=&#123;numbers&#125;/&gt;, document.getElementById(&apos;root&apos;));]]></content>
       <categories>
         <category>React</category>
@@ -214,7 +225,7 @@
   </entry>
   <entry>
     <title><![CDATA[快速开始]]></title>
-    <url>%2F2018%2F09%2F22%2Freact-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B%2F</url>
+    <url>%2F2018%2F09%2F21%2Freact-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B%2F</url>
     <content type="text"><![CDATA[前提 Node&gt;=6 搭建环境 全局安装create-react-app命令行工具 1$ npm install -g create-react-app 创建第一个React工程 1$ create-react-app my-app 启动项目 12$ cd my-app$ npm start 简单的React例子ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。该例子中将一个h1标题插入root节点，最终渲染出一个“Hello World”标题。 12345678import React from &apos;react&apos;;import ReactDOM from &apos;react-dom&apos;; ReactDOM.render( &lt;h1&gt;Hello, world!&lt;/h1&gt;, document.getElementById(&apos;root&apos;));]]></content>
       <categories>
         <category>React</category>
@@ -578,8 +589,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>ubuntu16.04</tag>
         <tag>ubuntu18.04</tag>
+        <tag>ubuntu16.04</tag>
         <tag>MacOSX</tag>
         <tag>mongodb</tag>
       </tags>
@@ -658,7 +669,7 @@
   </entry>
   <entry>
     <title><![CDATA[数组求和]]></title>
-    <url>%2F2018%2F04%2F04%2Farray-sum%2F</url>
+    <url>%2F2018%2F04%2F03%2Farray-sum%2F</url>
     <content type="text"><![CDATA[问题描述： 计算给定数组arr中所有元素的总和。 例： 输入[1,2,3,4] 输出：10 常规循环：1234567function sum(arr) &#123; var s = 0; function(var i=arr.length-1;i&gt;=0;i--) &#123; s+=arr[i]; &#125; return s;&#125; 思路：arr=[1,2,3,4]，i=arr.length-1=4-1=3 s0=0+arr[3]=0+4=4; s1=4+arr[2]=4+3=7; s2=7+arr[1]=7+2=9; s3=9+arr[0]=9+1=10; forEach遍历：1234567function sum(arr) &#123; var s = 0; arr.forEach(function(val,index,arr) &#123; s+=val; &#125;,0) return s;&#125; forEach传送门 val:数组中正在处理的当前元素 index:数组中正在处理的当前元素的索引 arr:forEach()方法正在操作的数组 例如:arr=[1,2,3,4]，则 s0=s+val0=0+1=1; s1=s0+val1=1+2=3; s2=s1+val2=3+3=6; s3=s2+val3=6+4=10; reduce方法：12345function sum(arr) &#123; return arr.reduce(function(prev, curr, idx, arr)&#123; return prev + curr; &#125;);&#125; reduce传送门 prev:累加器累加回调的返回值 curr:数组中正在处理的元素 idx:数组中正在处理的当前元素的索引 arr:调用reduce的数组 例如：arr=[1,2,3,4]，则共经历4轮 prev=0,curr=1,return 0+1=1 （第一轮累加器累加毁掉的返回值为0） prev=1,curr=2,return 1+2=3 prev=3,curr=3,return 3+3=6 prev=6,curr=4,return 6+4=10 eval：123function sum(arr) &#123; return eval(arr.join("+"));&#125;; eval传送门 例如:arr=[1,2,3,4]，则 return 1+2+3+4=10]]></content>
       <categories>
         <category>JS</category>
